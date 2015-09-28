@@ -1,0 +1,251 @@
+/* Use with permission only :: nikisweeting at gmail dot com :: 2013 */
+body {
+	background: url('bg6.jpeg') rgb(19,19,19);
+	color: #fff;
+	font-family: "Helvetica", Sans, sans-serif;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+   	margin: 0px;
+}
+a {
+	color: #fff;
+	text-decoration: none;
+}
+h1 {
+    display: inline;
+    vertical-align: top;
+}
+
+#conway-canvas {
+    position: fixed;
+    opacity: 0.2;
+    z-index: 0;
+}
+
+.static {
+    height: 100%;
+    width: 100%;
+    left: 0%;
+    top: 0%;
+}
+
+.parallax {
+    height: 120%;
+    width: 120%;
+    left: -10%;
+    top: -10%;
+}
+
+#navbar {
+    position: absolute;
+    height: 40px;
+    width: 100%;
+    margin-top: 34px;
+    margin-left: 0px;
+
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    padding-bottom: 4px;
+    padding-top: 0px;
+
+    background-color: #000;
+    color: #dfdfdf;
+
+    line-height: 1.5;
+    font-size: 30px;
+    font-family: "Andale Mono", monospace;
+}
+#navbar-title {
+    display: inline-block;
+    -moz-box-sizing: border-box;
+    margin-left: 62px;
+}
+
+#navbar-title:first-letter {
+    font-size: 29px;
+    color: red;
+}
+
+#navbar-title h1 {
+	font-size:30px;
+	color: #dfdfdf;
+	font-family: "Andale Mono", monospace;
+}
+#navbar-title img {
+    vertical-align: bottom;
+    -webkit-user-select: none; /* Safari, Chrome */
+    -moz-user-select: none; /* Firefox */
+    user-select: none; /* CSS3 */
+    padding-bottom: 5px;
+}
+#navbar-right {
+    float: right;
+    display: inline-block;
+    margin-right: 10px;
+    margin-top: -1px;
+}
+.pop-icon {
+    height: 36px;
+    padding: 4px 2px 4px 2px;
+    border-top: 1px solid rgba(0,0,0,0);
+    border-bottom: 1px solid rgba(0,0,0,0);
+}
+.pop-icon:hover {
+    height: 40px;
+    padding: 2px 0px 2px 0px;
+    border-top: 1px solid red;
+    border-bottom: 1px solid red;
+}
+.navlink {
+    display: inline-block;
+    padding-left: 2px;
+}
+.navlink:hover:first-letter {
+    color: red;
+}
+
+.number {
+	font-size: 40px;
+	height: 46px;
+	padding-top:5px;
+}
+.title {
+	font-size: 16px;
+	margin-bottom: 20px;
+	display: inline;
+        font-weight: 300;
+}
+
+.section {
+	position: absolute;
+	top: 79px;
+	padding-left: 5px;
+	border-left: 1px solid #ffffff;
+    width: 140px;
+    border-top: 1px solid rgba(0,0,0,0.00);
+}
+.section:hover {
+	background-color: rgba(20,20,20,.30);
+    border-top: 1px solid red;
+}
+.section:hover:first-letter {
+	color:red;
+}
+.section a:hover {
+    text-decoration: underline ;
+}
+
+#one {left: 110px;}
+#two {left: 256px;}
+#three {left: 402px;}
+#four {left: 548px;}
+#five {left: 694px;}
+#six {left: 840px;}
+
+/* used by JS animation */
+div#menua {
+	width: 130px;
+	height: 70px;
+	overflow: hidden;
+}
+
+div#menub {
+	width: 130px;
+	height: 70px;
+	overflow: hidden;
+}
+
+div#menuc {
+	width: 130px;
+	height: 70px;
+	overflow: hidden;
+}
+
+div#menud {
+	width: 130px;
+	height: 70px;
+	overflow: hidden;
+}
+
+div#menue {
+	width: 130px;
+	height: 70px;
+	overflow: hidden;
+}
+
+div#menuf {
+    	width: 140px;
+    	height: 70px;
+    	overflow: hidden;
+}
+
+#content {
+	width: 70%;
+	height: 500px;
+	margin-top: 350px;
+	margin-left: 100px;
+	margin-right: 100px;
+	background-color: rgba(20,20,20,.50);
+}
+
+#content-left {
+	display: inline-block;
+	width: 40%;
+}
+
+#squash-logo {
+	padding: 20px;
+}
+
+#content-right {
+	display: inline-block;
+	width: 50%;
+	float: right;
+}
+
+#progress {
+    position: fixed;
+    z-index: 2147483647;
+    top: 0;
+    left: -6px;
+    width: 1%;
+    height: 8px;
+    background: #620000;
+    -moz-border-radius: 1px;
+    -webkit-border-radius: 1px;
+    border-radius: 1px;
+    -moz-transition: width 500ms ease-out,opacity 400ms linear;
+    -ms-transition: width 500ms ease-out,opacity 400ms linear;
+    -o-transition: width 500ms ease-out,opacity 400ms linear;
+    -webkit-transition: width 500ms ease-out,opacity 400ms linear;
+    transition: width 500ms ease-out,opacity 400ms linear;
+}
+
+
+#progress dd, #progress dt {
+    position: absolute;
+    top: 0;
+    height: 2px;
+    -moz-box-shadow: #0088CC 1px 0 6px 1px;
+    -ms-box-shadow: #0088CC 1px 0 6px 1px;
+    -webkit-box-shadow: #0088CC 1px 0 6px 1px;
+    box-shadow: #0088CC 1px 0 6px 1px;
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+}
+
+#progress dt {
+    opacity: .6;
+    width: 180px;
+    right: -80px;
+    clip: rect(-6px,90px,14px,-6px);
+}
+
+#progress dd {
+    opacity: .6;
+    width: 20px;
+    right: 0;
+    clip: rect(-6px,22px,14px,10px);
+}
+
+@-moz-keyframes bugfix { from { padding-right: 1px ; } to { padding-right: 0; } }

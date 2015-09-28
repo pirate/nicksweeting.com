@@ -1,0 +1,20 @@
+<br><br>
+Stick this in the server {} block of your nginx.conf:
+<br><br>
+<pre>
+error_page  502  /error/502.html;            # auto-refresh ever sec until runserver comes up
+
+location ^~ /error/ {
+    internal;
+    alias /usr/local/etc/nginx/error/;
+}
+
+</pre>
+<br><br>
+Then make a directory /usr/local/etc/nginx/error and a file inside it called 502.html, and put this in it:
+<br><br>
+
+<iframe src="djangoup.txt"></iframe>
+
+<br><br>
+<b>Now when you first go to local.com and runserver isn't up yet, it'll autorefresh and load drchrono the moment runserver comes up, saving you time and keystrokes</b>

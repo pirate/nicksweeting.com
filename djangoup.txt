@@ -1,0 +1,11 @@
+<html>
+<head>
+<title>not ready - 502</title>
+</head>
+<body><br><br><br><br><br>
+<center>502 - auto-refreshing every second until ready</center>
+<script>
+setTimeout(function(){document.location = document.location.valueOf()}, 1000);
+</script>
+</body>
+</html>

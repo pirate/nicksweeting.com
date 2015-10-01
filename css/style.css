@@ -35,6 +35,18 @@ h1 {
     top: -10%;
 }
 
+input.tty {
+    color:#dfdfdf;
+    font-size:30px;
+    font-weight: bold;
+    font-family:'Andale Mono',monospace;
+    border:0;
+    outline:0;
+    background:transparent;
+    display:inline;
+    width: 500px;
+}
+
 #navbar {
     position: absolute;
     height: 40px;

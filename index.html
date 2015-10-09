@@ -23,9 +23,12 @@
 		<div id="navbar">
 			<div id="navbar-title">➜<font style="color:#14f0f0;">$</font><h1 class="tty">Nick Sweeting</h1><img class="blinky" src="images/blink.gif"/></div>
 			<div id="navbar-right">
-				<a href="https://soundcloud.com/thesquashshanghai">				<img class="pop-icon" src="images/squash.png" alt="Soundcloud"/></a>
-				<a href="https://stackoverflow.com/users/2156113/nick-sweeting"><img class="pop-icon" src="images/stack.png" alt="Stack Overflow"/></a>
-				<a href="https://github.com/pirate">							<img class="pop-icon" src="images/octocat.png" alt="Github"/></a>
+				<a href="https://soundcloud.com/thesquashshanghai">
+					<img class="pop-icon" src="images/squash.png" alt="Soundcloud"/></a>
+				<a href="https://stackoverflow.com/users/2156113/nick-sweeting">
+					<img class="pop-icon" src="images/stack.png" alt="Stack Overflow"/></a>
+				<a href="https://github.com/pirate">
+					<img class="pop-icon" src="images/octocat.png" alt="Github"/></a>
 			</div>
 		</div>
 		<div id="one" class="section">
@@ -78,6 +81,7 @@
 				<a class="navlink" href="http://soundcloud.com/thesquashshanghai">Soundcloud</a><br>
 				<a class="navlink" href="http://stackoverflow.com/users/2156113/nick-sweeting">StackOverflow</a><br>
 				<a class="navlink" href="http://invalidpatent.wordpress.com">Blog</a><br>
+				<a class="navlink" href="http://matadornetwork.com/travel-map/8ef2d5a395707639872a063550fa8df0-1444033294">Travel</a><br>	
 				<br>
 				<a class="navlink" href="/resume.pdf">Resume</a><br>
 				<a class="navlink" href="https://nicksweeting.com/d/nicksweeting.pgp.txt">PGP Public Key</a><br>
@@ -122,7 +126,7 @@
 				<a class="navlink" href="https://nicksweeting.com/stats/">Webalizer Stats</a><br>
 				<a class="navlink" href="https://nicksweeting.com/piwik/">Piwik</a><br>
 				<a class="navlink" href="https://nicksweeting.com/phpmyadmin/">phpMyAdmin</a><br>
-				<a class="navlink" href="https://nicksweeting.com/d/nicksweeting.pgp.txt">PGP Public Key</a><br>	
+				<a class="navlink" href="https://nicksweeting.com/d/squash.ssh.txt">SSH PubKey</a><br>	
 				<br>
 				<a class="navlink" href="https://freevpn.club/wp-admin/">VPN Admin</a><br>
 				<a class="navlink" href="https://freevpn.club/logs/">VPN Logs</a><br>
@@ -152,7 +156,8 @@
 			// menu hover effects
 			jQuery('div.menu').on('mouseenter', function(e) {
 				var title = jQuery(e.target).children('h2').html() || jQuery(e.target).parent('div.menu').children('h2').html();
-				jQuery('h1.tty').typer(['ls ' + title + '/'], endless=false, callback=function(){jQuery('h1.tty').html('ls ' + title + '/');});
+				jQuery('h1.tty').replaceWith('<h1 class="tty-in-progress"></h1>');
+				jQuery('h1.tty-in-progress').typer(['ls ' + title + '/'], endless=false, callback=function(){jQuery('h1.tty').html('ls ' + title + '/');});
 				this.set('tween', {
 					duration: 1000,
 					transition: Fx.Transitions.Bounce.easeOut
@@ -160,7 +165,7 @@
 			});
 			jQuery('div.menu').on('mouseleave', function() {
 				this.set('tween', {}).tween('height', '70px');
-				jQuery('h1.tty').html('Nick Sweeting');
+				jQuery('h1.tty-in-progress').replaceWith('<h1 class="tty">Nick Sweeting</h1>');
 			});
 
 			jQuery('a.navlink').on('mouseenter', function(e) {

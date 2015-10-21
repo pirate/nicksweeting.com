@@ -5,6 +5,9 @@ body {
 	font-family: "Helvetica", Sans, sans-serif;
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
    	margin: 0px;
+    min-width:965px;
+    min-height:400px;
+    overflow:hidden;
 }
 a {
 	color: #fff;
@@ -206,6 +209,24 @@ div#menuf {
 
 #squash-logo {
 	padding: 20px;
+}
+
+#hs-logo {
+    overflow:hidden;
+    position:absolute;
+    bottom:-14px;
+    right:-10px;
+}
+#hs-logo img {
+    height: 60px;
+}
+
+#bio {
+    position:absolute;
+    bottom:0;
+    left:6px;
+    font-family: sans-serif;
+    font-weight:100;
 }
 
 #content-right {

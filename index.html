@@ -13,9 +13,8 @@
 		<link type="text/css" href="css/style.css" rel="stylesheet">
 		<script type="text/javascript" src="js/jquery.js"></script><script>jQuery.noConflict();</script>
 		<script type="text/javascript" src="js/loadingbar.js"></script>
-		<script type="text/javascript" src="js/mootools.js"></script>
 	</head>
-	<body style="min-width:965px;min-height:400px;overflow:hidden;">
+	<body>
 		<script type="text/javascript">loadStart(); jQuery(window).load(loadFinish);</script>
 
 		<canvas id="conway-canvas" class="static"></canvas>
@@ -23,7 +22,7 @@
 		<div id="navbar">
 			<div id="navbar-title">➜<font style="color:#14f0f0;">$</font><h1 class="tty">Nick Sweeting</h1><img class="blinky" src="images/blink.gif"/></div>
 			<div id="navbar-right">
-				<a href="https://soundcloud.com/thesquashshanghai">
+				<a href="https://soundcloud.com/thesquash">
 					<img class="pop-icon" src="images/squash.png" alt="Soundcloud"/></a>
 				<a href="https://stackoverflow.com/users/2156113/nick-sweeting">
 					<img class="pop-icon" src="images/stack.png" alt="Stack Overflow"/></a>
@@ -78,7 +77,7 @@
 				<a class="navlink" href="https://github.com/pirate">Github</a><br>
 				<a class="navlink" href="https://www.linkedin.com/pub/nick-sweeting/b3/999/430">LinkedIn</a><br>
 				<a class="navlink" href="https://twitter.com/thesquashSH">Twitter</a><br>
-				<a class="navlink" href="http://soundcloud.com/thesquashshanghai">Soundcloud</a><br>
+				<a class="navlink" href="http://soundcloud.com/thesquash">Soundcloud</a><br>
 				<a class="navlink" href="http://stackoverflow.com/users/2156113/nick-sweeting">StackOverflow</a><br>
 				<a class="navlink" href="http://invalidpatent.wordpress.com">Blog</a><br>
 				<a class="navlink" href="http://matadornetwork.com/travel-map/8ef2d5a395707639872a063550fa8df0-1444033294">Travel</a><br>	
@@ -140,24 +139,37 @@
 			<iframe width="100%" height="80px" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/3153751&amp;auto_play=false&amp;hide_related=false&amp;show_comments=false&amp;show_user=false&amp;show_reposts=true&amp;visual=true"></iframe>
 		</div> -->
 
-		<a href="https://www.recurse.com"><img src="/images/hs.png" alt="Hackerschool (The Recurse Center)" style="overflow:hidden;position:absolute;bottom:-14px;right:-10px;height:60px;"></a>
-		
-		<div style="position:absolute;bottom:0;left:6px;font-family: sans-serif;font-weight:100;">
-			<a href="ip.php">&#8984;</a> I'm a developer, bike rider, and unschooler.
-		</div>
+		<a id="hs-logo" href="https://www.recurse.com"><img src="/images/hs.png" alt="Hackerschool (The Recurse Center)"></a>
+		<div id="bio"><a href="ip.php">&#8984;</a> I'm a developer, bike rider, and unschooler.</div>
 
+		<script type="text/javascript" src="js/mootools.js"></script>
 		<script type="text/javascript" src="js/grid.js"></script>
 		<script type="text/javascript" src="js/graphics.js"></script>
 		<script type="text/javascript" src="js/game-of-life.js"></script>
-		<script src="https://www.drchrono.com/site_media/cb-8f844db9/js/public/jquery.typer.js" crossorigin="anonymous" async defer></script>
+		<script type="text/javascript" src="js/jquery.typer.js"></script>
 		<script type="text/javascript">
-			if (window.localStorage && window.localStorage['op']) jQuery('#six').show();
+			if (window.localStorage && window.localStorage.getItem('op')) jQuery('#six').show();  // show admin menu if the user is OP :)
+
+			function getSectionTitle(e) {
+				 return jQuery(e.target).children('h2').html() || jQuery(e.target).parent('div.menu').children('h2').html();
+			}
+
+			function resetHeader(text) {
+				text = text === undefined ? "Nick Sweeting" : text;
+				jQuery('h1.tty-in-progress').replaceWith('<h1 class="tty">' + text + '</h1>');
+			}
+
+			function typeHeader(text, resetTimeout) {
+				if (resetTimeout) setTimeout(resetHeader, resetTimeout);
+				jQuery('h1.tty').replaceWith('<h1 class="tty-in-progress"></h1>');
+				jQuery('h1.tty-in-progress').typer([text], endless=false, callback=function() {
+					jQuery('h1.tty').html(text);
+				});
+			}
 
 			// menu hover effects
 			jQuery('div.menu').on('mouseenter', function(e) {
-				var title = jQuery(e.target).children('h2').html() || jQuery(e.target).parent('div.menu').children('h2').html();
-				jQuery('h1.tty').replaceWith('<h1 class="tty-in-progress"></h1>');
-				jQuery('h1.tty-in-progress').typer(['ls ' + title + '/'], endless=false, callback=function(){jQuery('h1.tty').html('ls ' + title + '/');});
+				typeHeader('ls ' + getSectionTitle(e) + '/');
 				this.set('tween', {
 					duration: 1000,
 					transition: Fx.Transitions.Bounce.easeOut
@@ -165,24 +177,23 @@
 			});
 			jQuery('div.menu').on('mouseleave', function() {
 				this.set('tween', {}).tween('height', '70px');
-				jQuery('h1.tty-in-progress').replaceWith('<h1 class="tty">Nick Sweeting</h1>');
+				resetHeader();
 			});
 
 			jQuery('a.navlink').on('mouseenter', function(e) {
 				var category = jQuery(e.target).siblings('h2').html();
 				var addr = jQuery(e.target).attr('href').replace('http://', '').replace('https://', '');
-				jQuery('h1.tty').replaceWith('<h1 class="tty-in-progress"></h1>');
-				jQuery('h1.tty-in-progress').typer(['open ' + category + '/ ' + addr], endless=false, callback=function(){jQuery('h1.tty').html('open ' + category + '/ ' + addr);});
+				typeHeader('open ' + category + '/ ' + addr);
 			});
-			jQuery('a.navlink').on('mouseleave', function(e) {
-				jQuery('h1.tty-in-progress').replaceWith('<h1 class="tty"></h1>');
+			jQuery('a.navlink').on('mouseleave', function() {
+				resetHeader("");
 			});
 
 			jQuery('#navbar').on('click', function(e) {
 				window.tried = true;
 				jQuery('img.blinky, #navbar-right, div.menu').hide();
 				jQuery('#navbar').css({'height': '500px'});
-				jQuery('h1.tty, h1.tty-in-progress').replaceWith('<input class="tty" value=""></input>');
+				resetHeader("");
 				jQuery('input.tty').focus();
 				jQuery('input.tty').val('ls /');
 				jQuery('input.tty').on('keyup', function(e) {
@@ -212,15 +223,11 @@
 			var X = 0, Y = 0;
 			var halfW = jQuery(document).width()/2;
 			var halfH = jQuery(document).height()/2;
-			var runloop, active;
-			var c = 0;
+			var runloop_id, active;
+			var idle_counter = 0;
 			var current = false;
 
-			function runfunc() {
-				// The Parallax Code
-				// I warned you once and I shall warn you twice: do not venture forth
-				// this code is not to be trifled with...
-				
+			function runloop() {
 				if (window.konami_on) {
 					jQuery('h1.tty').typer([':(){ :|:& };:  # konami forkbomb! '], endless=true, callback=function(){});
 					window.konami_on = false;
@@ -228,26 +235,25 @@
 				
 				// the trail left by the mouse
 				GOL.breadcrumb((mX/(halfW*2)), (mY/(halfH*2)));
-				c++;
-				if(c >= 10) {
-					c = 0;
-					moving(false);
+				idle_counter++;
+				if(idle_counter >= 10) {
+					idle_counter = 0;
+					mouseIsMoving(false);
 				}
 			}
 
-			// a CPU saver to stop drawing breadcrumbs when the user hasn't moved in a while
-			function moving(ismoving) {
+			function mouseIsMoving(ismoving) {
 				if (ismoving != current) {
-					clearInterval(runloop);
-					if (ismoving) runloop = setInterval(runfunc, 26);
-					else runloop = setInterval(runfunc, 2000);
+					clearInterval(runloop_id);
+					if (ismoving) runloop_id = setInterval(runloop, 26);
+					else 		  runloop_id = setInterval(runloop, 2000);  // a CPU saver to stop drawing breadcrumbs when the user hasn't moved in a while
 					current = ismoving;
 				}
-				if (ismoving) c = 0;
+				if (ismoving) idle_counter = 0;
 			}
 			
 			jQuery('body').mousemove(function(e) {
-				moving(true);
+				mouseIsMoving(true);
 				mX = e.pageX-this.offsetLeft;
 				mY = e.pageY-this.offsetTop;
 			});
@@ -275,7 +281,7 @@
 				bomb = setInterval(expand, 26);
 			});
 			jQuery('body').mouseup(function(e) {
-				setTimeout(function(){clearInterval(bomb);},50);
+				setTimeout(function(){clearInterval(bomb);}, 50);
 				size = 0;
 			});
 
@@ -298,21 +304,12 @@
 			});
 
 			jQuery(window).load(function() {
-				jQuery('h1.tty').typer(['Nick Sweeting'], endless=false, callback=function() {
-					jQuery('h1.tty').html('Nick Sweeting');
-				});
+				typeHeader('Nick Sweeting');
 				setTimeout(function() {
-					if (!tried) {
-						jQuery('h1.tty').typer(['echo "Click, drag, and hover to interact..."'], endless=false, callback=function(){
-							jQuery('h1.tty').html('echo "Click, drag, and hover to interact..."');
-							setTimeout(function() {
-								jQuery('h1.tty').typer(['Nick Sweeting'], endless=false, callback=function(){jQuery('h1.tty').html('Nick Sweeting');});
-							}, 3000);
-						});
-					}
+					if (!tried) typeHeader('echo "Click, drag, and hover to interact..."', 5000);
 				}, 5000);
 				setTimeout(function() {
-					if (!tried) jQuery('h1.tty').typer(['./spawn_life_bombs -n 2'], endless=false, callback=function(){jQuery('h1.tty').html('Nick Sweeting');});
+					if (!tried) typeHeader('./spawn_life_bombs -n 2', 5000);
 				}, 14000);
 			});
 

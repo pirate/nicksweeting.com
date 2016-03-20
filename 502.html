@@ -1,19 +1,24 @@
 <!-- SEE IT IN ACTION: http://nicksweeting.com/502.html
 
-Helpful page for developers that auto-refreshes if runserver is down,
-so that you don't have to start your devserver, then switch to chrome and
-keep pressing Ctrl+R repeatedly as you wait for it to come up.
+Helpful page for developers that auto-refreshes when your development server is down,
+so that you don't have to start your devserver, then switch to chrome and keep 
+pressing Ctrl+R repeatedly as you wait for it to come up.
 
 Add the following to your nginx.conf server block to use this page:
 
     server {
-        ...
+        listen 80 default;
+        server_name  webserver.dev;             # make sure this is in /etc/hosts as    `127.0.0.1  webserver.dev`
 
-        error_page  502  /error/502.html;     # auto-refresh ever sec until runserver comes up
+        error_page  502  /error/502.html;       # use this file when nginx gets no response from the proxied devserver
 
         location ^~ /error/ {
             internal;
-            alias /var/www/error/;            # change this to the location of the folder that contains 502.html
+            alias /var/www/error/;              # change this to the location of the folder that contains 502.html
+        }
+        
+        location / {
+            proxy_pass  http://127.0.0.1:8000;  # your dev server port
         }
     }
 -->

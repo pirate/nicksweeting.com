@@ -1,0 +1,38 @@
+<!-- Helpful page for developers that auto-refreshes if runserver is down,
+so that you don't have to start your devserver, then switch to chrome and
+keep pressing Ctrl+R repeatedly as you wait for it to come up.
+
+Add the following to your nginx.conf server block to use this page:
+
+    server {
+        ...
+
+        error_page  502  /error/502.html;     # auto-refresh ever sec until runserver comes up
+
+        location ^~ /error/ {
+            internal;
+            alias /var/www/error/;            # change this to the location of the folder that contains 502.html
+        }
+    }
+-->
+
+<html>
+    <head>
+        <title>502 | not ready</title>
+    </head>
+    <body>
+        <br><br><br><br><br>
+        <center>
+            <br><br><br>
+            <img src="http://i.imgur.com/oKi0TdP.gif"/>
+            <br><br>
+            <h3>502 Error</h3>
+            auto-refreshing every 1s until webserver comes up
+        </center>
+        <script>
+            setTimeout(function() {
+                document.location = document.location.valueOf()
+            }, 1000);
+        </script>
+    </body>
+</html>

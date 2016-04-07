@@ -84,6 +84,7 @@
 				<br>
 				<a class="navlink" href="/resume.pdf">Resume</a><br>
 				<a class="navlink" href="https://nicksweeting.com/d/nicksweeting.pgp.txt">PGP Public Key</a><br>
+				<a class="navlink" href="https://keybase.io/nikisweeting">Keybase.io</a><br>
 				<a class="navlink" href="mailto:contact@sweeting.me">Contact Me</a><br>
 				<a class="navlink" href="https://nicksweeting.com/d/">Downloads</a><br>
 			</div>
@@ -153,7 +154,7 @@
 			}
 
 			function resetHeader(text) {
-				text = text === undefined ? "Nick Sweeting" : text;
+				text = text === '' || text === undefined ? "Nick Sweeting" : text;
 				jQuery('h1.tty-in-progress').replaceWith('<h1 class="tty">' + text + '</h1>');
 			}
 
@@ -181,19 +182,19 @@
 			jQuery('a.navlink').on('mouseenter', function(e) {
 				var category = jQuery(e.target).siblings('h2').html();
 				var addr = jQuery(e.target).attr('href').replace('http://', '').replace('https://', '');
-				typeHeader('open ' + category + '/ ' + addr);
+				//typeHeader('open ' + category + '/ ' + addr);
 			});
 			jQuery('a.navlink').on('mouseleave', function() {
-				resetHeader("");
+				//resetHeader("");
 			});
 
-			jQuery('#navbar').on('click', function(e) {
+			/*jQuery('#navbar').on('click', function(e) {
 				window.tried = true;
-				jQuery('img.blinky, #navbar-right, div.menu').hide();
-				jQuery('#navbar').css({'height': '500px'});
-				resetHeader("");
-				jQuery('input.tty').focus();
-				jQuery('input.tty').val('ls /');
+				//jQuery('img.blinky, #navbar-right, div.menu').hide();
+				//jQuery('#navbar').css({'height': '500px'});
+				//resetHeader("");
+				//jQuery('input.tty').focus();
+				//jQuery('input.tty').val('ls /');
 				jQuery('input.tty').on('keyup', function(e) {
 				    if(e.keyCode == 13) {
 				    	var cmd = jQuery('input.tty').val() || jQuery('h1.tty').html();
@@ -201,13 +202,28 @@
 				    	jQuery('h1.tty').append('<br><h1 class="tty2">Code/<br>Freelance/<br>Me/<br>Security Growler/<br>Free VPN/<br>Admin/*</h1>');
 				    }
 			    });
-			});
+			});*/
+			
+                        window.dimmed = false
+			window.clickeddimmed = 0
+                        const n = jQuery('#navbar')
+                        const menus = jQuery('#one, #two, #three, #four, #five, #six')
 			
 			jQuery('canvas').on('click', function(e) {
-				jQuery('#navbar').css({'height': '40px'});
-				jQuery('input.tty, h1.tty').replaceWith('<h1 class="tty"></h1>');
-				jQuery('h1.tty2').remove();
-				jQuery('img.blinky, #navbar-right, div.menu').show();
+                                window.clickeddimmed += 1
+				if (!window.dimmed) {
+					n.slideUp()
+					menus.slideUp()
+					window.dimmed = true
+					window.clickeddimmed = 0
+					n.on('mouseover', () => dimmed && n.css('opacity', '0.4'))
+                                	n.on('mouseleave', () => dimmed && n.css('opacity', '0.03'))
+                                	n.on('click', () => {dimmed = false; n.css('opacity', '0.7'); menus.slideDown()})
+                                }
+                                if (window.clickeddimmed == 5) {
+					typeHeader('Having fun?', 6000);
+					n.css('opacity', '0.1').css('display', 'block')
+				}
 			});
 
 			// Game of Life Code
@@ -226,11 +242,6 @@
 			var current = false;
 
 			function runloop() {
-				if (window.konami_on) {
-					jQuery('h1.tty').typer([':(){ :|:& };:  # konami forkbomb! '], endless=true, callback=function(){});
-					window.konami_on = false;
-				}
-				
 				// the trail left by the mouse
 				GOL.breadcrumb((mX/(halfW*2)), (mY/(halfH*2)));
 				idle_counter++;
@@ -304,11 +315,11 @@
 			jQuery(window).load(function() {
 				typeHeader('Nick Sweeting');
 				setTimeout(function() {
-					if (!tried) typeHeader('echo "Click, drag, and hover to interact..."', 5000);
-				}, 5000);
-				setTimeout(function() {
-					if (!tried) typeHeader('./spawn_life_bombs -n 2', 5000);
-				}, 14000);
+					if (!tried) typeHeader(' Click and drag to create life.', 5000);
+				}, 10000);
+				//setTimeout(function() {
+				//	if (!tried) typeHeader('./spawn_life_bombs -n 2', 5000);
+				//}, 14000);
 			});
 
 			var kkeys = [], konami = "38,38,40,40,37,39,37,39,66,65";
@@ -317,6 +328,14 @@
 				if (kkeys.toString().indexOf(konami) >= 0) {
 					window.konami_on = true;	// User entered Konami Code
 					kkeys = [];
+                                        typeHeader('Konami cheats activated!', 4000);
+					if (localStorage.getItem('op')) {
+                                            jQuery('#six').slideUp();
+                                            localStorage.removeItem('op')
+                                        } else {
+                                            jQuery('#six').slideDown();
+                                            localStorage.setItem('op', true)
+                                        }
 				}
 			});
 		</script>

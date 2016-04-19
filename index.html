@@ -1,130 +1,433 @@
+<!DOCTYPE I DONT NEED A DOCTYPE BECAUSE ITS 2016>
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta name="description" content="&#8984; I'm a developer, avid bike rider, and unschooler. I'm &#477;&#647;&#592;&#633;&#305;d@ on github and thesquash elsewhere. Recurse Center (Hackerschool) 2014 alum. Shanghai, NYC, PDX, SF.">
 		<meta name="keywords" content="nick,nicholas,sweeting,developer,github,wordpress,programming,coding,nikisweeting,squash,thesquash,django,python,shanghai,drchrono,hackerschool,pirate,thesquashSH,recurse,center">
-		<link rel="canonical" href="https://nicksweeting.com">
 		<meta name="language" content="en">
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="canonical" href="https://nicksweeting.com">
 
 		<title>Nick Sweeting</title>
 		<link rel="icon" type="image/png" href="/favicon.ico">
 
-		<link type="text/css" href="css/style.css" rel="stylesheet">
+		<style>
+			/* Use with permission only :: nikisweeting at gmail dot com :: 2016 */
+			body {
+				background: url('bg6.jpeg') rgb(19,19,19);
+				color: #fff;
+				font-family: "Helvetica", Sans, sans-serif;
+				text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+			   	margin: 0px;
+			    min-width:965px;
+			    min-height:400px;
+			    overflow:hidden;
+			}
+			a {
+				color: #fff;
+				text-decoration: none;
+			}
+			h1 {
+			    display: inline;
+			    vertical-align: top;
+			}
+
+			#conway-canvas {
+			    position: fixed;
+			    opacity: 0.2;
+			    z-index: 0;
+			}
+
+			.static {
+			    height: 100%;
+			    width: 100%;
+			    left: 0%;
+			    top: 0%;
+			}
+
+			.parallax {
+			    height: 120%;
+			    width: 120%;
+			    left: -10%;
+			    top: -10%;
+			}
+
+			input.tty {
+			    color:#dfdfdf;
+			    font-size:30px;
+			    font-weight: bold;
+			    font-family:'Andale Mono',monospace;
+			    border:0;
+			    outline:0;
+			    background:transparent;
+			    display:inline;
+			    width: 500px;
+			}
+
+			#navbar {
+			    position: absolute;
+			    height: 40px;
+			    width: 100%;
+			    margin-top: 34px;
+			    margin-left: 0px;
+			    opacity: 0.7;
+
+			    border-top: 1px solid white;
+			    border-bottom: 1px solid white;
+			    padding-bottom: 4px;
+			    padding-top: 0px;
+
+			    background-color: #000;
+			    color: #dfdfdf;
+
+			    line-height: 1.5;
+			    font-size: 30px;
+			    font-family: "Andale Mono", monospace;
+			}
+			#navbar-title {
+			    display: inline-block;
+			    -moz-box-sizing: border-box;
+			    margin-left: 62px;
+			}
+
+			#navbar-title:first-letter {
+			    font-size: 29px;
+			    color: red;
+			}
+
+			#navbar-title h1 {
+				font-size:30px;
+				color: #dfdfdf;
+				font-family: "Andale Mono", monospace;
+			}
+			#navbar-title img {
+			    vertical-align: bottom;
+			    -webkit-user-select: none; /* Safari, Chrome */
+			    -moz-user-select: none; /* Firefox */
+			    user-select: none; /* CSS3 */
+			    padding-bottom: 5px;
+			}
+			#navbar-right {
+			    float: right;
+			    display: inline-block;
+			    margin-right: 10px;
+			    margin-top: -1px;
+			}
+			.pop-icon {
+			    height: 36px;
+			    padding: 4px 2px 4px 2px;
+			    border-top: 1px solid rgba(0,0,0,0);
+			    border-bottom: 1px solid rgba(0,0,0,0);
+			}
+			.pop-icon:hover {
+			    height: 40px;
+			    padding: 2px 0px 2px 0px;
+			    border-top: 1px solid red;
+			    border-bottom: 1px solid red;
+			}
+			.navlink {
+			    display: inline-block;
+			    padding-left: 2px;
+			}
+			.navlink:hover:first-letter {
+			    color: red;
+			}
+
+			.number {
+				font-size: 40px;
+				height: 46px;
+				padding-top:5px;
+			}
+			.title {
+			    font-size: 16px;
+			    margin-top: 0px;
+			    margin-bottom: 10px;
+			    display: inline-block;
+			    font-weight: 300;
+			}
+
+			.section {
+				position: absolute;
+				top: 79px;
+				padding-left: 5px;
+				border-left: 1px solid #ffffff;
+			    width: 140px;
+			    border-top: 1px solid rgba(0,0,0,0.00);
+			}
+			.section:hover {
+				background-color: rgba(20,20,20,.30);
+			    border-top: 1px solid red;
+			}
+			.section:hover:first-letter {
+				color:red;
+			}
+			.section a:hover {
+			    text-decoration: underline ;
+			}
+
+			#one {left: 110px;}
+			#two {left: 256px;}
+			#three {left: 402px;}
+			#four {left: 548px;}
+			#five {left: 694px;}
+			#six {left: 840px;}
+
+			/* used by JS animation */
+			#menua, #menub, #menuc, #menud, #menue, #menuf {
+				width: 130px;
+				height: 70px;
+				overflow: hidden;
+			}
+
+			#content {
+				width: 70%;
+				height: 500px;
+				margin-top: 350px;
+				margin-left: 100px;
+				margin-right: 100px;
+				background-color: rgba(20,20,20,.50);
+			}
+
+			#content-left {
+				display: inline-block;
+				width: 40%;
+			}
+
+			#squash-logo {
+				padding: 20px;
+			}
+
+			#hs-logo {
+			    overflow:hidden;
+			    position:absolute;
+			    bottom:-14px;
+			    right:-10px;
+			}
+			#hs-logo img {
+			    height: 60px;
+			}
+
+			#bio {
+			    position:absolute;
+			    bottom:0;
+			    left:6px;
+			    font-family: sans-serif;
+			    font-weight:100;
+			}
+
+			#content-right {
+				display: inline-block;
+				width: 50%;
+				float: right;
+			}
+
+			#progress {
+			    position: fixed;
+			    z-index: 2147483647;
+			    top: 0;
+			    left: -6px;
+			    width: 1%;
+			    height: 8px;
+			    background: #620000;
+			    -moz-border-radius: 1px;
+			    -webkit-border-radius: 1px;
+			    border-radius: 1px;
+			    -moz-transition: width 500ms ease-out,opacity 400ms linear;
+			    -ms-transition: width 500ms ease-out,opacity 400ms linear;
+			    -o-transition: width 500ms ease-out,opacity 400ms linear;
+			    -webkit-transition: width 500ms ease-out,opacity 400ms linear;
+			    transition: width 500ms ease-out,opacity 400ms linear;
+			}
+
+
+			#progress dd, #progress dt {
+			    position: absolute;
+			    top: 0;
+			    height: 2px;
+			    -moz-box-shadow: #0088CC 1px 0 6px 1px;
+			    -ms-box-shadow: #0088CC 1px 0 6px 1px;
+			    -webkit-box-shadow: #0088CC 1px 0 6px 1px;
+			    box-shadow: #0088CC 1px 0 6px 1px;
+			    -moz-border-radius: 100%;
+			    -webkit-border-radius: 100%;
+			    border-radius: 100%;
+			}
+
+			#progress dt {
+			    opacity: .6;
+			    width: 180px;
+			    right: -80px;
+			    clip: rect(-6px,90px,14px,-6px);
+			}
+
+			#progress dd {
+			    opacity: .6;
+			    width: 20px;
+			    right: 0;
+			    clip: rect(-6px,22px,14px,10px);
+			}
+
+			@-moz-keyframes bugfix { from { padding-right: 1px ; } to { padding-right: 0; } }
+		</style>
 		<script type="text/javascript" src="js/jquery.js"></script><script>jQuery.noConflict();</script>
 		<script type="text/javascript" src="js/loadingbar.js"></script>
 	</head>
 	<body>
+		<!-- Red loading bar -->
 		<script type="text/javascript">loadStart(); jQuery(window).load(loadFinish);</script>
 
 		<canvas id="conway-canvas" class="static"></canvas>
 
 		<div id="navbar">
-			<div id="navbar-title">➜<font style="color:#14f0f0;">$</font><h1 class="tty">Nick Sweeting</h1><img class="blinky" src="images/blink.gif"/></div>
+			<!-- Header Left ➜$ Nick Sweeting _ -->
+			<div id="navbar-title">
+				<a href="https://github.com/fish-shell/fish-shell/">
+					➜<font style="color:#14f0f0;">$</font>
+				</a>
+				<h1 class="tty">Nick Sweeting</h1>
+				<img class="blinky" src="images/blink.gif"/>
+			</div>
+			<!-- Header Right Icons -->
 			<div id="navbar-right">
 				<a href="https://soundcloud.com/thesquash">
-					<img class="pop-icon" src="images/squash.png" alt="Soundcloud"/></a>
+					<img class="pop-icon" src="images/squash.png" alt="Soundcloud"/>
+				</a>
 				<a href="https://stackoverflow.com/users/2156113/nick-sweeting">
-					<img class="pop-icon" src="images/stack.png" alt="Stack Overflow"/></a>
+					<img class="pop-icon" src="images/stack.png" alt="Stack Overflow"/>
+				</a>
 				<a href="https://github.com/pirate">
-					<img class="pop-icon" src="images/octocat.png" alt="Github"/></a>
+					<img class="pop-icon" src="images/octocat.png" alt="Github"/>
+				</a>
 			</div>
 		</div>
+
 		<div id="one" class="section">
 			<div id="menua" class="menu">
 				<div class="number">01</div>
-				<h2 class="title">Code</h2><br><br>
+				<h2 class="title">Code</h2><br>
+				<small class="navlink" style="color:red">Pet Projects</small><br>
 				<a class="navlink" href="https://github.com/pirate/mesh-networking">Mesh Networking</a><br>
-				<a class="navlink" href="https://github.com/pirate/security-growler/">Security Growler</a><br>
-				<a class="navlink" href="https://github.com/pirate/python-medusa">#Medusa</a><br>
-				<a class="navlink" href="https://github.com/TheHotspot/hotspot">Hotspot App</a><br>
+				<a class="navlink" href="https://github.com/pirate/python-medusa">Medusa Bot</a><br>
+				<a class="navlink" href="https://github.com/pirate/nicksweeting.com">This Site</a><br>
 				<br>
-				<a class="navlink" href="https://github.com/pirate/WebRTCChat">WebRTC Chat</a><br>
-				<a class="navlink" href="https://github.com/pirate/spellchecker">Spellchecker</a><br>
-				<a class="navlink" href="https://github.com/pirate/throws">Throws</a><br>
-				<a class="navlink" href="https://github.com/pirate/py-data">XKCD</a><br>
-				<a class="navlink" href="https://github.com/pirate/C--DataStructures">C++ Data Structures</a><br>
+				<small class="navlink" style="color:red">Usable Apps</small><br>
+				<a class="navlink" href="https://github.com/pirate/security-growler/">Security Growler</a><br>
 				<a class="navlink" href="/spritz/">OpenSpritz</a><br>
 				<a class="navlink" href="https://github.com/pirate/inject-luxinate">Inject Luxinate</a><br>
-				<br><br>
-				<a class="navlink" href="https://github.com/pirate/nicksweeting.com">This Site</a><br>
+				<br>
+				<small class="navlink" style="color:red">Proof of Competence</small><br>
+				<a class="navlink" href="https://github.com/pirate/C--DataStructures">Data Structures</a><br>
+				<a class="navlink" href="https://github.com/pirate/py-data">Experiments</a><br>
+				<a class="navlink" href="https://github.com/pirate/spellchecker">Spellchecker</a><br>
+				<a class="navlink" href="https://github.com/pirate/throws">Python 'Throws'</a><br>
+				<a class="navlink" href="https://github.com/TheHotspot/hotspot">Hotspot App</a><br>
+				<a class="navlink" href="https://github.com/pirate/WebRTCChat">WebRTC Chat</a><br>
 			</div>
 		</div>
 
 		<div id="two" class="section">
 			<div id="menub" class="menu">
 				<div class="number">02</div>
-				<h2 class="title">Freelance</h2><br><br>
-				<a class="navlink" href="http://pie.expo-spot.com">ExpoSpot</a><br>
-				<a class="navlink" href="http://mathiaspld.com">Mathias PLD</a><br>
-				<a class="navlink" href="http://markburdonwoodcraft.com">Mark Burdon</a><br>
+				<h2 class="title">Work</h2><br>
+				<small class="navlink" style="color:red">上海, China</small><br>
+				<a class="navlink" href="http://waimaichaoren.com/">DeliveryHero</a><br>
+				<a class="navlink" href="http://dbond.net/">DBond IT</a><br>
+				<a class="navlink" href="http://TheChildAcademy.com">Child Academy</a><br>
+				<!--<a class="navlink" href="http://NewtonChina.com">Newton China</a><br>-->
+				<!--<a class="navlink" href="http://mmp-hk.net">MMP Hong Kong</a><br>-->
+				<br>
+				<small class="navlink" style="color:red">NYC, USA</small><br>
 				<a class="navlink" href="http://stevesweeting.com">Steve Sweeting</a><br>
-				<a class="navlink" href="http://thehotspot.com">The Hotspot</a><br>
+				<a class="navlink" href="http://SolutionsJournalism.org">SJ Journalism</a><br>
+				<br>
+				<small class="navlink" style="color:red">PDX, USA</small><br>
+				<a class="navlink" href="#">ExpoSpot</a><br>
+				<a class="navlink" href="http://markburdonwoodcraft.com">Mark Burdon</a><br>
+				<a class="navlink" href="http://mathiaspld.com">Mathias PLD</a><br>
 				<a class="navlink" href="http://artflak.com">Artflak</a><br>
-				<br><br>
-				<center>
+				<!--<a class="navlink" href="http://thehotspot.com">The Hotspot</a><br>-->
+				<!--<a class="navlink" href="http://StaceyWillSellIt.com">StaceyWillSellIt</a><br>-->
+				<!-- NSFW: <a class="navlink" href="http://spyceclub.com/">Spyce Club</a><br>-->
+				<br>
+				<small class="navlink" style="color:red">SF, USA</small><br>
+				<a class="navlink" href="http://mavrx.co">Mavrx Inc.<small>(current)</small></a><br>
+				<a class="navlink" href="https://drchrono.com">drchrono Inc.</a><br>
+
+				<!--<center>
 					Many more on: <br>
 					<a class="navlink" href="https://www.linkedin.com/pub/nick-sweeting/b3/999/430">LinkedIn</a>
 					<h2 style="display:none">Work</h2>
-				</center>
+				</center>-->
 			</div>
 		</div>
 
 		<div id="three" class="section">
 			<div id="menuc" class="menu">
 				<div class="number">03</div>
-				<h2 class="title">Me</h2><br><br>
-				<a class="navlink" href="https://github.com/pirate">Github</a><br>
-				<a class="navlink" href="https://www.linkedin.com/pub/nick-sweeting/b3/999/430">LinkedIn</a><br>
+				<h2 class="title">Me</h2><br>
+				<small class="navlink" style="color:red">Links</small><br>
 				<a class="navlink" href="https://twitter.com/thesquashSH">Twitter</a><br>
 				<a class="navlink" href="http://soundcloud.com/thesquash">Soundcloud</a><br>
-				<a class="navlink" href="http://stackoverflow.com/users/2156113/nick-sweeting">StackOverflow</a><br>
-				<a class="navlink" href="http://invalidpatent.wordpress.com">Blog</a><br>
-				<a class="navlink" href="http://matadornetwork.com/travel-map/285b47bb9feab3865d925841dd9669b1-1456701316">Travel</a><br>	
-				<br>
-				<a class="navlink" href="/resume.pdf">Resume</a><br>
-				<a class="navlink" href="https://nicksweeting.com/d/nicksweeting.pgp.txt">PGP Public Key</a><br>
-				<a class="navlink" href="https://keybase.io/nikisweeting">Keybase.io</a><br>
-				<a class="navlink" href="mailto:contact@sweeting.me">Contact Me</a><br>
 				<a class="navlink" href="https://nicksweeting.com/d/">Downloads</a><br>
+				<a class="navlink" href="http://matadornetwork.com/travel-map/285b47bb9feab3865d925841dd9669b1-1456701316">Travel</a><br>
+				<a class="navlink" href="http://invalidpatent.wordpress.com">Blog</a><br>
+				<br>
+				<small class="navlink" style="color:red">Programming</small><br>
+				<a class="navlink" href="https://github.com/pirate">Github</a><br>
+				<a class="navlink" href="http://stackoverflow.com/users/2156113/nick-sweeting">StackOverflow</a><br>
+				<a class="navlink" href="https://hackerone.com/thesquash">HackerOne</a><br>
+				<a class="navlink" href="https://www.linkedin.com/pub/nick-sweeting/b3/999/430">LinkedIn</a><br>
+				<a class="navlink" href="#currently-employed" style="text-decoration: line-through;" title="Currently Employed">Resume</a><br>
+				<br>
+				<small class="navlink" style="color:red">Identity</small><br>
+				<a class="navlink" href="mailto:contact@sweeting.me">Contact Me</a><br>
+				<a class="navlink" href="https://keybase.io/nikisweeting">Keybase.io</a><br>
+				<a class="navlink" href="https://nicksweeting.com/d/nicksweeting.pgp.txt">PGP Public Key</a><br>
 			</div>
 		</div>
 
 		<div id="four" class="section">
 			<div id="menud" class="menu">
 				<div class="number">04</div>
-				<h2 class="title">Security Growler</h2><br><br>	
-				<a class="navlink" href="https://github.com/pirate/security-growler/raw/master/Security%20Growler.app.zip">Download App</a><br>
+				<h2 class="title">Security Growler</h2><br>
+				<small class="navlink" style="color:red">Downloads</small><br>
+				<a class="navlink" href="https://github.com/pirate/security-growler/raw/master/Security%20Growler.app.zip">The App <small>.app.zip</small></a><br>
+				<a class="navlink" href="https://github.com/pirate/security-growler/zipball/master">Source Code <small>.zip</small></a><br>
 				<br>
-				<a class="navlink" href="https://pirate.github.io/security-growler/">Website</a><br>
+				<small class="navlink" style="color:red">Info</small><br>
 				<a class="navlink" href="https://github.com/pirate/security-growler/">Github</a><br>
-				<a class="navlink" href="https://github.com/pirate/security-growler/zipball/master">Source ZIP</a><br>
+				<a class="navlink" href="https://pirate.github.io/security-growler/">Main Website</a><br>
+				<br>
+				<small class="navlink" style="color:red">A menubar app that alerts you of all system auth events.</small>
 			</div>
 		</div>
 
 		<div id="five" class="section">
 			<div id="menue" class="menu">
 				<div class="number">05</div>
-				<h2 class="title">Free VPN</h2><br><br>
-				<span class="navlink" style="color:red">For students in China only.</span><br>
-				<br>
+				<h2 class="title">Free VPN</h2><br>
+				<small class="navlink" style="color:red; ">Friends &amp; Family Only</small><br>
 				<a class="navlink" href="https://freevpn.club">Home</a><br>
 				<a class="navlink" href="https://freevpn.club/contact/">Sign Up</a><br>
 				<a class="navlink" href="https://freevpn.club/status/">Status</a><br>
 				<a class="navlink" href="https://freevpn.club/install/">Install Info</a><br>
+
+				<br><br>
+				<small class="navlink" style="color:red">A free VPN I offer for students in China.</small><br>
 			</div>
 		</div>
 
+		<!-- Press the secret keypress combo to display this -->
 		<div id="six" class="section" style="display:none">
 			<div id="menuf" class="menu">
 				<div class="number" style="color:red">06</div>
-				<h2 class="title">Admin</h2><br><br>
+				<h2 class="title">Admin</h2><br>
 				<a class="navlink" href="https://cloud.digitalocean.com/droplets/491013">VPS Status</a><br>
 				<a class="navlink" href="https://nicksweeting.com/webmin/">Webmin</a><br>
 				<a class="navlink" href="https://nicksweeting.com/stats/">Webalizer Stats</a><br>
 				<a class="navlink" href="https://nicksweeting.com/piwik/">Piwik</a><br>
 				<a class="navlink" href="https://nicksweeting.com/phpmyadmin/">phpMyAdmin</a><br>
-				<a class="navlink" href="https://nicksweeting.com/d/squash.ssh.txt">SSH PubKey</a><br>	
+				<a class="navlink" href="https://nicksweeting.com/d/squash.ssh.txt">SSH PubKey</a><br>
 				<br>
 				<a class="navlink" href="https://freevpn.club/wp-admin/">VPN Admin</a><br>
 				<a class="navlink" href="https://freevpn.club/logs/">VPN Logs</a><br>
@@ -133,13 +436,18 @@
 			</div>
 		</div>
 
-
+		<!-- Soundcloud audio player -->
 		<!-- <div style="position:absolute;right:0;top:78px;z-index:10;width:400px;opacity:0.7;">
 			<iframe width="100%" height="80px" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/3153751&amp;auto_play=false&amp;hide_related=false&amp;show_comments=false&amp;show_user=false&amp;show_reposts=true&amp;visual=true"></iframe>
 		</div> -->
 
-		<a id="hs-logo" href="https://www.recurse.com"><img src="/images/hs.png" alt="Hackerschool (The Recurse Center)"></a>
-		<div id="bio"><a href="ip.php">&#8984;</a> I'm a developer, bike rider, and unschooler.</div>
+		<a id="hs-logo" href="https://www.recurse.com">
+			<img src="/images/hs.png" alt="I attended the Recurse Center (Hackerschool).">
+		</a>
+		<div id="bio">
+			<a href="//nicksweeting.com/ip.php">&#8984;</a>
+			I'm a developer, bike rider, and unschooler.
+		</div>
 
 		<script type="text/javascript" src="js/mootools.js"></script>
 		<script type="text/javascript" src="js/grid.js"></script>
@@ -147,26 +455,28 @@
 		<script type="text/javascript" src="js/game-of-life.js"></script>
 		<script type="text/javascript" src="js/jquery.typer.js"></script>
 		<script type="text/javascript">
-			if (window.localStorage && window.localStorage.getItem('op')) jQuery('#six').show();  // show admin menu if the user is OP :)
-
 			function getSectionTitle(e) {
-				 return jQuery(e.target).children('h2').html() || jQuery(e.target).parent('div.menu').children('h2').html();
+				return jQuery(e.target).children('h2').html() ||
+				       jQuery(e.target).parent('div.menu').children('h2').html();
 			}
 
+			// Header terminal-style typer
 			function resetHeader(text) {
-				text = text === '' || text === undefined ? "Nick Sweeting" : text;
-				jQuery('h1.tty-in-progress').replaceWith('<h1 class="tty">' + text + '</h1>');
+				text = text === '' || text === undefined ?
+	           		"Nick Sweeting" : text;
+				jQuery('h1.tty-in-progress').replaceWith(
+					'<h1 class="tty">' + text + '</h1>');
 			}
-
 			function typeHeader(text, resetTimeout) {
 				if (resetTimeout) setTimeout(resetHeader, resetTimeout);
-				jQuery('h1.tty').replaceWith('<h1 class="tty-in-progress"></h1>');
+				jQuery('h1.tty').replaceWith(
+					'<h1 class="tty-in-progress"></h1>');
 				jQuery('h1.tty-in-progress').typer([text], endless=false, callback=function() {
 					jQuery('h1.tty').html(text);
 				});
 			}
 
-			// menu hover effects
+			// Menu drop on hover effect
 			jQuery('div.menu').on('mouseenter', function(e) {
 				typeHeader('ls ' + getSectionTitle(e) + '/');
 				this.set('tween', {
@@ -179,15 +489,17 @@
 				resetHeader();
 			});
 
-			jQuery('a.navlink').on('mouseenter', function(e) {
-				var category = jQuery(e.target).siblings('h2').html();
-				var addr = jQuery(e.target).attr('href').replace('http://', '').replace('https://', '');
-				//typeHeader('open ' + category + '/ ' + addr);
-			});
-			jQuery('a.navlink').on('mouseleave', function() {
-				//resetHeader("");
-			});
+			// Show section name in header when hovered on
+			// jQuery('a.navlink').on('mouseenter', function(e) {
+			// 	var category = jQuery(e.target).siblings('h2').html();
+			// 	var addr = jQuery(e.target).attr('href').replace('http://', '').replace('https://', '');
+			// 	typeHeader('open ' + category + '/ ' + addr);
+			// });
+			// jQuery('a.navlink').on('mouseleave', function() {
+			// 	resetHeader("");
+			// });
 
+			// Turn header into interactive terminal when clicked on
 			/*jQuery('#navbar').on('click', function(e) {
 				window.tried = true;
 				//jQuery('img.blinky, #navbar-right, div.menu').hide();
@@ -196,39 +508,19 @@
 				//jQuery('input.tty').focus();
 				//jQuery('input.tty').val('ls /');
 				jQuery('input.tty').on('keyup', function(e) {
-				    if(e.keyCode == 13) {
-				    	var cmd = jQuery('input.tty').val() || jQuery('h1.tty').html();
-				    	jQuery('input.tty, h1.tty').replaceWith('<h1 class="tty">' + cmd + '</h1>');
-				    	jQuery('h1.tty').append('<br><h1 class="tty2">Code/<br>Freelance/<br>Me/<br>Security Growler/<br>Free VPN/<br>Admin/*</h1>');
-				    }
-			    });
+					if(e.keyCode == 13) {
+						var cmd = jQuery('input.tty').val() || jQuery('h1.tty').html();
+						jQuery('input.tty, h1.tty').replaceWith('<h1 class="tty">' + cmd + '</h1>');
+						jQuery('h1.tty').append('<br><h1 class="tty2">Code/<br>Freelance/<br>Me/<br>Security Growler/<br>Free VPN/<br>Admin/*</h1>');
+					}
+				});
 			});*/
-			
-                        window.dimmed = false
-			window.clickeddimmed = 0
-                        const n = jQuery('#navbar')
-                        const menus = jQuery('#one, #two, #three, #four, #five, #six')
-			
-			jQuery('canvas').on('click', function(e) {
-                                window.clickeddimmed += 1
-				if (!window.dimmed) {
-					n.slideUp()
-					menus.slideUp()
-					window.dimmed = true
-					window.clickeddimmed = 0
-					n.on('mouseover', () => dimmed && n.css('opacity', '0.4'))
-                                	n.on('mouseleave', () => dimmed && n.css('opacity', '0.03'))
-                                	n.on('click', () => {dimmed = false; n.css('opacity', '0.7'); menus.slideDown()})
-                                }
-                                if (window.clickeddimmed == 4) {
-					typeHeader('Having fun?', 6000);
-					n.css('opacity', '0.1').css('display', 'block')
-				}
-			});
 
 			// Game of Life Code
-			var width = Math.ceil(jQuery('#conway-canvas').width()/3);    // lower this denominator to make the GOL higher resolution
-			var height = Math.ceil(jQuery('#conway-canvas').height()/3);
+			var resolution = 3  // 1 is highest, 10 is lowest
+			var canvas = jQuery('#conway-canvas');
+			var width = Math.ceil(canvas.width()/resolution);
+			var height = Math.ceil(canvas.height()/resolution);
 
 			GOL.init("conway-canvas", width, height, 1, 1);
 			GOL.start();
@@ -242,32 +534,29 @@
 			var current = false;
 
 			function runloop() {
-				// the trail left by the mouse
-				GOL.breadcrumb((mX/(halfW*2)), (mY/(halfH*2)));
 				idle_counter++;
 				if(idle_counter >= 10) {
 					idle_counter = 0;
 					mouseIsMoving(false);
+					return;
 				}
+				GOL.breadcrumb((mX/(halfW*2)), (mY/(halfH*2)));  // the trail left by the mouse
 			}
 
+			// OnClick Expanding Square code
 			function mouseIsMoving(ismoving) {
 				if (ismoving != current) {
 					clearInterval(runloop_id);
-					if (ismoving) runloop_id = setInterval(runloop, 26);
-					else 		  runloop_id = setInterval(runloop, 2000);  // a CPU saver to stop drawing breadcrumbs when the user hasn't moved in a while
+					runloop_id = setInterval(
+						runloop,
+						ismoving ? 26 : 2000   // slow the runloop when the user hasn't moved in a while
+					);
 					current = ismoving;
 				}
-				if (ismoving) idle_counter = 0;
+				if (ismoving)
+					idle_counter = 0;
 			}
-			
-			jQuery('body').mousemove(function(e) {
-				mouseIsMoving(true);
-				mX = e.pageX-this.offsetLeft;
-				mY = e.pageY-this.offsetTop;
-			});
 
-			// OnClick Expanding Square code
 			var size = 0;
 			var maxsize = 1000;
 			var bomb;
@@ -284,6 +573,11 @@
 				}
 			}
 
+			jQuery('body').mousemove(function(e) {
+				mouseIsMoving(true);
+				mX = e.pageX-this.offsetLeft;
+				mY = e.pageY-this.offsetTop;
+			});
 			jQuery('body').mousedown(function(e) {
 				clearInterval(bomb);
 				tried = true;
@@ -294,7 +588,65 @@
 				size = 0;
 			});
 
-			jQuery(document).ready(function() {
+			// Hide and show the menubar when interacting with the game
+			window.dimmed = false
+			window.clickeddimmed = 0
+			var n = jQuery('#navbar')
+			var hideables = jQuery('#one, #two, #three, #four, #five, #six, #hs-logo, #bio')
+
+			jQuery('canvas').on('mousedown', function(e) {
+				window.clickeddimmed += 1
+				if (!window.dimmed) {
+					// hide menus
+					n.slideUp()
+					hideables.slideUp()
+					window.dimmed = true
+					window.clickeddimmed = 0
+					n.on('mouseover', function() {dimmed && n.css('opacity', '0.4')})
+					n.on('mouseleave', function() {dimmed && n.css('opacity', '0.03')})
+					// unhide menus
+					n.on('click', function() {
+						dimmed = false
+						n.css('opacity', '0.7');
+						hideables.slideDown();
+					})
+				}
+				if (window.clickeddimmed == 4) {
+					typeHeader('Having fun?', 6000);
+					n.css('opacity', '0.1').css('display', 'block')
+				}
+			});
+
+			// show admin menu if the user is OP :)
+			if (window.localStorage &&
+				window.localStorage.getItem('op'))
+				jQuery('#six').show();
+
+			// Konami key combo cheat detector
+			var kkeys = [], konami = "38,38,40,40,37,39,37,39,66,65";
+			jQuery(document).on("keydown", function(e) {
+				kkeys.push(e.keyCode);
+				if (kkeys.toString().indexOf(konami) >= 0) {
+					window.konami_on = true;	// User entered Konami Code
+					kkeys = [];
+					typeHeader('Konami cheats activated!', 4000);
+					if (localStorage.getItem('op')) {
+						jQuery('#six').slideUp();
+						localStorage.removeItem('op')
+					} else {
+						jQuery('#six').slideDown();
+						localStorage.setItem('op', true)
+					}
+				}
+			});
+
+			jQuery(window).load(function() {
+				typeHeader('Nick Sweeting');
+
+				setTimeout(function() {
+					if (!tried) typeHeader(' Click and drag to feed it', 5000);
+				}, 10000);
+
 				// start growing automatically after 15sec if they haven't tried it yet themselves
 				setTimeout(function() {
 					if (!tried) {
@@ -309,38 +661,13 @@
 						}, 26);
 					}
 				}, 15000);
-				console.log('\n\n"We are swimming upstream against a great torrent of disorganization\nIn this, our main obligation is to establish arbitrary enclaves of order and system.\nIt is the greatest possible victory to be, to continue to be, and to have been. No defeat can deprive us of the success of having existed for some moment of time in a universe that seems indifferent to us."\n--Norber Weiner');
-			});
 
-			jQuery(window).load(function() {
-				typeHeader('Nick Sweeting');
-				setTimeout(function() {
-					if (!tried) typeHeader(' Click and drag to create life.', 5000);
-				}, 10000);
-				//setTimeout(function() {
-				//	if (!tried) typeHeader('./spawn_life_bombs -n 2', 5000);
-				//}, 14000);
-			});
-
-			var kkeys = [], konami = "38,38,40,40,37,39,37,39,66,65";
-			jQuery(document).on("keydown", function(e) {
-				kkeys.push(e.keyCode);
-				if (kkeys.toString().indexOf(konami) >= 0) {
-					window.konami_on = true;	// User entered Konami Code
-					kkeys = [];
-                                        typeHeader('Konami cheats activated!', 4000);
-					if (localStorage.getItem('op')) {
-                                            jQuery('#six').slideUp();
-                                            localStorage.removeItem('op')
-                                        } else {
-                                            jQuery('#six').slideDown();
-                                            localStorage.setItem('op', true)
-                                        }
-				}
+				// Some console wisdom
+				console.log('"We are swimming upstream against a great torrent of disorganization.\nIn this, our main obligation is to establish arbitrary enclaves of order and system.\nIt is the greatest possible victory to be, to continue to be, and to have been.\nNo defeat can deprive us of the success of having existed for some moment of time in a universe that seems indifferent to us."\n--Norber Weiner');
 			});
 		</script>
 
-		<!-- Piwik -->
+		<!-- Piwik Analytics -->
 		<script type="text/javascript">
 		  var _paq = _paq || [];
 		  _paq.push(['trackPageView']);

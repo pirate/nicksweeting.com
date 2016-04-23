@@ -1,0 +1,54 @@
+==================================================================
+https://keybase.io/nikisweeting
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://nicksweeting.com
+  * I am nikisweeting (https://keybase.io/nikisweeting) on keybase.
+  * I have a public key ASAkuTPmwBtAZG-xmUmPOsqC7NN90ZmmCOXvUx1EcLtRKQo
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "012024b933e6c01b40646fb199498f3aca82ecd37dd199a608e5ef531d4470bb51290a",
+            "host": "keybase.io",
+            "kid": "012024b933e6c01b40646fb199498f3aca82ecd37dd199a608e5ef531d4470bb51290a",
+            "uid": "d74c7f8c371674c21b89cdd41f3b5200",
+            "username": "nikisweeting"
+        },
+        "service": {
+            "hostname": "nicksweeting.com",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "client": {
+        "name": "keybase.io go client",
+        "version": "1.0.13"
+    },
+    "ctime": 1458679638,
+    "expire_in": 504576000,
+    "merkle_root": {
+        "ctime": 1458679597,
+        "hash": "e4db2ce68a368669964f4722a80bdce78741470c1389161827389834a31af3cd893ebb27e43c424e95cfd96a4480a6ecd463671d36dd9aea76a6fda310edba43",
+        "seqno": 418845
+    },
+    "prev": "c9c9343bae7c2fa675c051e1fd9d9525ff1dac39e4c59fa9e7cc90a7bd9b7c2f",
+    "seqno": 10,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+g6Rib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgJLkz5sAbQGRvsZlJjzrKguzTfdGZpgjl71MdRHC7USkKp3BheWxvYWTFAvx7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTIwMjRiOTMzZTZjMDFiNDA2NDZmYjE5OTQ5OGYzYWNhODJlY2QzN2RkMTk5YTYwOGU1ZWY1MzFkNDQ3MGJiNTEyOTBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwMjRiOTMzZTZjMDFiNDA2NDZmYjE5OTQ5OGYzYWNhODJlY2QzN2RkMTk5YTYwOGU1ZWY1MzFkNDQ3MGJiNTEyOTBhIiwidWlkIjoiZDc0YzdmOGMzNzE2NzRjMjFiODljZGQ0MWYzYjUyMDAiLCJ1c2VybmFtZSI6Im5pa2lzd2VldGluZyJ9LCJzZXJ2aWNlIjp7Imhvc3RuYW1lIjoibmlja3N3ZWV0aW5nLmNvbSIsInByb3RvY29sIjoiaHR0cDoifSwidHlwZSI6IndlYl9zZXJ2aWNlX2JpbmRpbmciLCJ2ZXJzaW9uIjoxfSwiY2xpZW50Ijp7Im5hbWUiOiJrZXliYXNlLmlvIGdvIGNsaWVudCIsInZlcnNpb24iOiIxLjAuMTMifSwiY3RpbWUiOjE0NTg2Nzk2MzgsImV4cGlyZV9pbiI6NTA0NTc2MDAwLCJtZXJrbGVfcm9vdCI6eyJjdGltZSI6MTQ1ODY3OTU5NywiaGFzaCI6ImU0ZGIyY2U2OGEzNjg2Njk5NjRmNDcyMmE4MGJkY2U3ODc0MTQ3MGMxMzg5MTYxODI3Mzg5ODM0YTMxYWYzY2Q4OTNlYmIyN2U0M2M0MjRlOTVjZmQ5NmE0NDgwYTZlY2Q0NjM2NzFkMzZkZDlhZWE3NmE2ZmRhMzEwZWRiYTQzIiwic2Vxbm8iOjQxODg0NX0sInByZXYiOiJjOWM5MzQzYmFlN2MyZmE2NzVjMDUxZTFmZDlkOTUyNWZmMWRhYzM5ZTRjNTlmYTllN2NjOTBhN2JkOWI3YzJmIiwic2Vxbm8iOjEwLCJ0YWciOiJzaWduYXR1cmUifaNzaWfEQHwtWQfKwXs5VaWy41HxjJFfB7Kt6Ku264AWJYbws0b9yIO0khp1qs3wk+VFDCXlDcdjvNtOS6zQ6h1jIgpJEg+oc2lnX3R5cGUgo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/nikisweeting
+
+==================================================================

@@ -1,0 +1,13 @@
+User-agent:*
+Disallow: /analytics/
+Disallow: /piwik/
+Disallow: /webmin/
+Disallow: /stats/
+Disallow: /artflak/
+Disallow: /hotspot/
+Disallow: /minecraft/
+Disallow: /xano/
+Disallow: /etherpad/
+Disallow: /vps/
+Disallow: /public/
+Disallow: /d/

@@ -4,7 +4,7 @@ https://keybase.io/nikisweeting
 
 I hereby claim:
 
-  * I am an admin of http://nicksweeting.com
+  * I am an admin of https://nicksweeting.com
   * I am nikisweeting (https://keybase.io/nikisweeting) on keybase.
   * I have a public key ASAkuTPmwBtAZG-xmUmPOsqC7NN90ZmmCOXvUx1EcLtRKQo
 
@@ -21,30 +21,30 @@ To do so, I am signing this object:
         },
         "service": {
             "hostname": "nicksweeting.com",
-            "protocol": "http:"
+            "protocol": "https:"
         },
         "type": "web_service_binding",
         "version": 1
     },
     "client": {
         "name": "keybase.io go client",
-        "version": "1.0.13"
+        "version": "1.0.16"
     },
-    "ctime": 1458679638,
+    "ctime": 1464826856,
     "expire_in": 504576000,
     "merkle_root": {
-        "ctime": 1458679597,
-        "hash": "e4db2ce68a368669964f4722a80bdce78741470c1389161827389834a31af3cd893ebb27e43c424e95cfd96a4480a6ecd463671d36dd9aea76a6fda310edba43",
-        "seqno": 418845
+        "ctime": 1464826799,
+        "hash": "14e989e7df0572d6dfd3bf7dee56384e4d8c109e04b4fbce8793ca1103e52433c5cd8d6299ba0b2eba0d4e6225f271ea8dfd4c482bb587511575f1dd22febf70",
+        "seqno": 475830
     },
-    "prev": "c9c9343bae7c2fa675c051e1fd9d9525ff1dac39e4c59fa9e7cc90a7bd9b7c2f",
-    "seqno": 10,
+    "prev": "8509c071b65770e5f3a56c723518d4f2a4a8ab4b708115574e48fdf1790ce1ff",
+    "seqno": 24,
     "tag": "signature"
 }
 
 which yields the signature:
 
-g6Rib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgJLkz5sAbQGRvsZlJjzrKguzTfdGZpgjl71MdRHC7USkKp3BheWxvYWTFAvx7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTIwMjRiOTMzZTZjMDFiNDA2NDZmYjE5OTQ5OGYzYWNhODJlY2QzN2RkMTk5YTYwOGU1ZWY1MzFkNDQ3MGJiNTEyOTBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwMjRiOTMzZTZjMDFiNDA2NDZmYjE5OTQ5OGYzYWNhODJlY2QzN2RkMTk5YTYwOGU1ZWY1MzFkNDQ3MGJiNTEyOTBhIiwidWlkIjoiZDc0YzdmOGMzNzE2NzRjMjFiODljZGQ0MWYzYjUyMDAiLCJ1c2VybmFtZSI6Im5pa2lzd2VldGluZyJ9LCJzZXJ2aWNlIjp7Imhvc3RuYW1lIjoibmlja3N3ZWV0aW5nLmNvbSIsInByb3RvY29sIjoiaHR0cDoifSwidHlwZSI6IndlYl9zZXJ2aWNlX2JpbmRpbmciLCJ2ZXJzaW9uIjoxfSwiY2xpZW50Ijp7Im5hbWUiOiJrZXliYXNlLmlvIGdvIGNsaWVudCIsInZlcnNpb24iOiIxLjAuMTMifSwiY3RpbWUiOjE0NTg2Nzk2MzgsImV4cGlyZV9pbiI6NTA0NTc2MDAwLCJtZXJrbGVfcm9vdCI6eyJjdGltZSI6MTQ1ODY3OTU5NywiaGFzaCI6ImU0ZGIyY2U2OGEzNjg2Njk5NjRmNDcyMmE4MGJkY2U3ODc0MTQ3MGMxMzg5MTYxODI3Mzg5ODM0YTMxYWYzY2Q4OTNlYmIyN2U0M2M0MjRlOTVjZmQ5NmE0NDgwYTZlY2Q0NjM2NzFkMzZkZDlhZWE3NmE2ZmRhMzEwZWRiYTQzIiwic2Vxbm8iOjQxODg0NX0sInByZXYiOiJjOWM5MzQzYmFlN2MyZmE2NzVjMDUxZTFmZDlkOTUyNWZmMWRhYzM5ZTRjNTlmYTllN2NjOTBhN2JkOWI3YzJmIiwic2Vxbm8iOjEwLCJ0YWciOiJzaWduYXR1cmUifaNzaWfEQHwtWQfKwXs5VaWy41HxjJFfB7Kt6Ku264AWJYbws0b9yIO0khp1qs3wk+VFDCXlDcdjvNtOS6zQ6h1jIgpJEg+oc2lnX3R5cGUgo3RhZ80CAqd2ZXJzaW9uAQ==
+g6Rib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgJLkz5sAbQGRvsZlJjzrKguzTfdGZpgjl71MdRHC7USkKp3BheWxvYWTFAv17ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTIwMjRiOTMzZTZjMDFiNDA2NDZmYjE5OTQ5OGYzYWNhODJlY2QzN2RkMTk5YTYwOGU1ZWY1MzFkNDQ3MGJiNTEyOTBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwMjRiOTMzZTZjMDFiNDA2NDZmYjE5OTQ5OGYzYWNhODJlY2QzN2RkMTk5YTYwOGU1ZWY1MzFkNDQ3MGJiNTEyOTBhIiwidWlkIjoiZDc0YzdmOGMzNzE2NzRjMjFiODljZGQ0MWYzYjUyMDAiLCJ1c2VybmFtZSI6Im5pa2lzd2VldGluZyJ9LCJzZXJ2aWNlIjp7Imhvc3RuYW1lIjoibmlja3N3ZWV0aW5nLmNvbSIsInByb3RvY29sIjoiaHR0cHM6In0sInR5cGUiOiJ3ZWJfc2VydmljZV9iaW5kaW5nIiwidmVyc2lvbiI6MX0sImNsaWVudCI6eyJuYW1lIjoia2V5YmFzZS5pbyBnbyBjbGllbnQiLCJ2ZXJzaW9uIjoiMS4wLjE2In0sImN0aW1lIjoxNDY0ODI2ODU2LCJleHBpcmVfaW4iOjUwNDU3NjAwMCwibWVya2xlX3Jvb3QiOnsiY3RpbWUiOjE0NjQ4MjY3OTksImhhc2giOiIxNGU5ODllN2RmMDU3MmQ2ZGZkM2JmN2RlZTU2Mzg0ZTRkOGMxMDllMDRiNGZiY2U4NzkzY2ExMTAzZTUyNDMzYzVjZDhkNjI5OWJhMGIyZWJhMGQ0ZTYyMjVmMjcxZWE4ZGZkNGM0ODJiYjU4NzUxMTU3NWYxZGQyMmZlYmY3MCIsInNlcW5vIjo0NzU4MzB9LCJwcmV2IjoiODUwOWMwNzFiNjU3NzBlNWYzYTU2YzcyMzUxOGQ0ZjJhNGE4YWI0YjcwODExNTU3NGU0OGZkZjE3OTBjZTFmZiIsInNlcW5vIjoyNCwidGFnIjoic2lnbmF0dXJlIn2jc2lnxEBsBNsctnU7yAxRDRZcNKkjf0O+92693KpJ6ohReVq2dXe6Q/fe7WDlKqmn5Dk7dW5njtdDbF/qsT8evn/BuaQEqHNpZ190eXBlIKN0YWfNAgKndmVyc2lvbgE=
 
 And finally, I am proving ownership of this host by posting or
 appending to this document.

@@ -191,7 +191,7 @@
             }
 
             function getPublicNetworkInfo() {
-                fetch('http://freegeoip.net/json/').then(function (response) {
+                fetch('https://freegeoip.net/json/').then(function (response) {
                     return response.json();
                 }).then(function (body) {
                     document.getElementById('public-ip').innerHTML = body.ip;
@@ -227,7 +227,7 @@
 
             <span id="left-footer">
                 <a href="https://hacking.ventures/local-ip-discovery-with-html5-webrtc-security-and-privacy-risk/">How is this done?</a> &mdash;
-                <a href="https://github.com/">View on github</a>
+                <a href="https://github.com/pirate/nicksweeting.com/blob/master/scan.html">View on github</a>
             </span>
             <span id="right-footer">
                 <a href="https://nicksweeting.com">sweeting.me</a>

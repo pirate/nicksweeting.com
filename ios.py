@@ -7,7 +7,7 @@ api = PyiCloudService('nikisweeting@gmail.com')
 
 app = Flask(__name__)
 
-@app.route('/list', methods=['GET'])
+@app.route('/devices/list', methods=['GET'])
 def device_list():
     devices = []
     for id, device in api.devices.items():
@@ -32,7 +32,7 @@ def device_list():
     return jsonify({'devices': devices})
 
 
-@app.route('/alert', methods=['POST'])
+@app.route('/devices/alert', methods=['POST'])
 def alert():
     device_id = request.form['id']
 

@@ -7,7 +7,7 @@ api = PyiCloudService('nikisweeting@gmail.com')
 
 app = Flask(__name__)
 
-@app.route('/devices', methods=['GET'])
+@app.route('/list', methods=['GET'])
 def device_list():
     devices = []
     for id, device in api.devices.items():

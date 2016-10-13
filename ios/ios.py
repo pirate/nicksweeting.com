@@ -1,22 +1,39 @@
 from pyicloud import PyiCloudService
 
-from flask import Flask, jsonify, request, abort
+from flask import Flask, jsonify, request, abort, render_template
 
 
 api = PyiCloudService('nikisweeting@gmail.com')
 
 app = Flask(__name__)
 
+
+def get_devices_list():
+    """safely get the devices list, and handle api disconnections gracefully"""
+    global api
+    try:
+        return api.devices
+    except Exception:
+        api = PyiCloudService('nikisweeting@gmail.com')
+        return api.devices
+
+
+@app.route('/devices', methods=['GET'])
+def device_index():
+    return render_template('devices.html')
+
+
 @app.route('/devices/list', methods=['GET'])
 def device_list():
     devices = []
-    for id, device in api.devices.items():
+    for id, device in get_devices_list().items():
         location_info = device.location()
         device_json = {
             'id': id,
             'name': device.data['name'],
             'model': device.data['deviceDisplayName'],
             'is_desktop': device.data['isMac'],
+            'battery': int(device.data['batteryLevel'] * 100),
             'location': {
                 'lat': location_info['latitude'],
                 'lng': location_info['longitude'],
@@ -28,7 +45,6 @@ def device_list():
             } if location_info else None,
         }
         devices.append(device_json)
-
     return jsonify({'devices': devices})
 
 
@@ -38,18 +54,18 @@ def alert():
 
     subject = request.form.get('subject', '').strip()
     message = request.form.get('message', '').strip()
-    sounds = request.form.get('sounds')
+    sounds = request.form.get('sounds') in ('1', 'true', 'True')
 
-    device = api.devices.get(device_id)
+    device = get_devices_list().get(device_id)
     if not device:
         abort(404)
 
     if not message:
         device.play_sound(subject=subject)
     else:
-        device.display_message(subject=subject, message=message, sounds=bool(sounds))
+        device.display_message(subject=subject, message=message, sounds=sounds)
     return jsonify({'success': True, 'errors': []})
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)

@@ -99,7 +99,7 @@
             }
             function sendAlert(id, div_idx, sounds) {
                 let {message, subject} = getInputs(div_idx)
-                $.post('/devices/alert', {id, message, subject, sounds}, function(resp) {
+                $.post('/devices/alert/', {id, message, subject, sounds}, function(resp) {
                     if (resp.success) {
                         $(`.device-${div_idx} .sent`).append(`<b>${subject}:</b> ${message}<br/>`)
                     } else {
@@ -110,7 +110,7 @@
 
 
             console.log('Fetching devices...')
-            $.get('/devices/list', function(resp) {
+            $.get('/devices/list/', function(resp) {
                 $('#devices').html('')
                 console.log('Got devices.', resp.devices);
                 window.devices = resp.devices

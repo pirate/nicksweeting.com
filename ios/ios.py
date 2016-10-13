@@ -18,12 +18,12 @@ def get_devices_list():
         return api.devices
 
 
-@app.route('/devices', methods=['GET'])
+@app.route('/devices/', methods=['GET'])
 def device_index():
     return render_template('devices.html')
 
 
-@app.route('/devices/list', methods=['GET'])
+@app.route('/devices/list/', methods=['GET'])
 def device_list():
     devices = []
     for id, device in get_devices_list().items():
@@ -48,7 +48,7 @@ def device_list():
     return jsonify({'devices': devices})
 
 
-@app.route('/devices/alert', methods=['POST'])
+@app.route('/devices/alert/', methods=['POST'])
 def alert():
     device_id = request.form['id']
 

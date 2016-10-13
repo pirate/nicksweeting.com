@@ -75,6 +75,10 @@
                 border: 1px solid #333;
                 margin: auto;
                 margin-bottom: 30px;
+                vertical-align: top;
+            }
+            pre.sent {
+                text-align: left;
             }
         </style>
     </head>
@@ -88,26 +92,22 @@
         </div>
 
         <script>
-            function sendAlert(id, message, subject, sounds) {
+            function getInputs(div_idx) {
+                let subject = $(`.device-${div_idx} input.sbj`).val()
+                let message = $(`.device-${div_idx} input.msg`).val()
+                return {subject, message}
+            }
+            function sendAlert(id, div_idx, sounds) {
+                let {message, subject} = getInputs(div_idx)
                 $.post('/devices/alert', {id, message, subject, sounds}, function(resp) {
                     if (resp.success) {
-                        alert('Sent alert!');
+                        $(`.device-${div_idx} .sent`).append(`<b>${subject}:</b> ${message}<br/>`)
                     } else {
-                        alert('Alert failed to send!');
+                        alert('Alert failed to send!')
                     }
                 })
             }
-            function sendMessage(id, inputs) {
-                sendAlert(id, inputs.msg, inputs.sbj, false);
-            }
-            function playSound(id, inputs) {
-                sendAlert(id, inputs.msg, inputs.sbj, true);
-            }
-            function getInputs(device_idx) {
-                var sbj = $('.device-' + device_idx + ' input.sbj').val();
-                var msg = $('.device-' + device_idx + ' input.msg').val();
-                return {sbj, msg}
-            }
+
 
             console.log('Fetching devices...')
             $.get('/devices/list', function(resp) {
@@ -115,13 +115,13 @@
                 console.log('Got devices.', resp.devices);
                 window.devices = resp.devices
                 resp.devices.forEach(function(device, idx) {
-                    var bat;
-                    if (device.battery > 80) bat = 'full';
-                    else if (device.battery > 40) bat = 'half';
-                    else if (device.battery > 15) bat = 'quarter';
-                    else bat = 'empty';
-                    var online = (!device.location || device.location.is_old) ? 'offline' : 'online'
-                    var ts = device.location ? (new Date(device.location.timestamp)).toString().split(' GMT')[0] : ''
+                    let bat
+                    if (device.battery > 80) bat = 'full'
+                    else if (device.battery > 40) bat = 'half'
+                    else if (device.battery > 15) bat = 'quarter'
+                    else bat = 'empty'
+                    let online = (!device.location || device.location.is_old) ? 'offline' : 'online'
+                    let ts = device.location ? (new Date(device.location.timestamp)).toString().split(' GMT')[0] : ''
 
                     $('#devices').append(
                         $(`
@@ -147,13 +147,15 @@
                                 <small class="${online}">Last Updated: ${ts}</small>
                                 <hr/>
 
+                                <pre class="sent"></pre>
+
                                 <input class="sbj" placeholder="Subject"/>
                                 <input class="msg" placeholder="Message..."/><br/><br/>
 
-                                <button onclick="sendMessage('${device.id}', getInputs(${idx}))">
+                                <button onclick="sendAlert('${device.id}', ${idx}, false)">
                                     <i class="fa fa-comment"></i> Send Silent Message
                                 </button>
-                                <button onclick="playSound('${device.id}', getInputs(${idx}))">
+                                <button onclick="sendAlert('${device.id}', ${idx}, true)">
                                     <i class="fa fa-volume-up"></i> Play Sound & Message
                                 </button> ${(!device.location || device.location.is_old) ? '(delivered once online)' : ''}
                                 <br/><br/>

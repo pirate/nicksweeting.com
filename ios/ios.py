@@ -56,11 +56,14 @@ def alert():
     message = request.form.get('message', '').strip()
     sounds = request.form.get('sounds') in ('1', 'true', 'True')
 
+    if not (subject or message or sounds):
+        abort(400)
+
     device = get_devices_list().get(device_id)
     if not device:
         abort(404)
 
-    if not message:
+    if sounds and not message:
         device.play_sound(subject=subject)
     else:
         device.display_message(subject=subject, message=message, sounds=sounds)

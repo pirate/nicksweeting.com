@@ -11,3 +11,4 @@ Disallow: /etherpad/
 Disallow: /vps/
 Disallow: /public/
 Disallow: /d/
+Disallow: /devices/

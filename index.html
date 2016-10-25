@@ -8,7 +8,7 @@
 		<link rel="canonical" href="https://nicksweeting.com">
 
 		<title>Nick Sweeting</title>
-		<link rel="icon" type="image/png" href="/favicon.ico">
+		<link rel="icon" type="image/png" href="favicon.ico">
 
 		<style>
 			body {
@@ -195,15 +195,17 @@
 				padding: 20px;
 			}
 
-			#hs-logo {
-			    overflow:hidden;
-			    position:absolute;
-			    bottom:-14px;
-			    right:-10px;
+			.rc-scout {
+			    overflow: hidden;
+			    position: absolute;
+                height: 60px !important;
+			    bottom: 4px;
+			    right: -32px;
+                opacity: 0.5;
 			}
-			#hs-logo img {
-			    height: 60px;
-			}
+            .rc-scout:hover {
+                opacity: 0.9;
+            }
 
 			#bio {
 			    position:absolute;
@@ -269,6 +271,7 @@
 		</style>
 		<script type="text/javascript" src="js/jquery.js"></script><script>jQuery.noConflict();</script>
 		<script type="text/javascript" src="js/loadingbar.js"></script>
+        <script async defer src="https://www.recurse-scout.com/loader.js?t=df5ffefb4c4ce5c58d84880b918d719b"></script>
 	</head>
 	<body>
 		<!-- Red loading bar -->
@@ -430,7 +433,7 @@
 				<a class="navlink" href="https://nicksweeting.com/phpmyadmin/">phpMyAdmin</a><br>
 				<a class="navlink" href="https://nicksweeting.com/d/squash.ssh.txt">SSH PubKey</a><br>
 				<br>
-				<a class="navlink" href="/devices/">Devices</a><br>
+				<a class="navlink" href="devices/">Devices</a><br>
 				<a class="navlink" href="https://freevpn.club/wp-admin/">VPN Admin</a><br>
 				<a class="navlink" href="https://dashboard.opendns.com/stats/17282949/totalrequests/today/">OpenDNS</a><br>
 			</div>
@@ -441,11 +444,10 @@
 			<iframe width="100%" height="80px" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/3153751&amp;auto_play=false&amp;hide_related=false&amp;show_comments=false&amp;show_user=false&amp;show_reposts=true&amp;visual=true"></iframe>
 		</div> -->
 
-		<a id="hs-logo" href="https://www.recurse.com">
-			<img src="/images/hs.png" alt="I attended the Recurse Center (Hackerschool).">
-		</a>
+        <div class="rc-scout" title="I attended the Recurse Center (Hackerschool)."></div>
+
 		<div id="bio">
-			<a href="//nicksweeting.com/scan.html">&#8984;</a>
+			<a href="scan.html">&#8984;</a>
 			I'm a developer, bike rider, and unschooler.
 		</div>
 
@@ -519,16 +521,16 @@
 			// Game of Life Code
 			var resolution = 3  // 1 is highest, 10 is lowest
 			var canvas = jQuery('#conway-canvas');
-			var width = Math.ceil(canvas.width()/resolution);
-			var height = Math.ceil(canvas.height()/resolution);
+			window.width = Math.ceil(canvas.width()/resolution);
+			window.height = Math.ceil(canvas.height()/resolution);
 
 			GOL.init("conway-canvas", width, height, 1, 1);
 			GOL.start();
 
 			var mX = 0, mY = 0;
 			var X = 0, Y = 0;
-			var halfW = jQuery(document).width()/2;
-			var halfH = jQuery(document).height()/2;
+			window.halfW = jQuery(document).width()/2;
+			window.halfH = jQuery(document).height()/2;
 			var runloop_id, active;
 			var idle_counter = 0;
 			var current = false;
@@ -587,12 +589,21 @@
 				setTimeout(function(){clearInterval(bomb);}, 50);
 				size = 0;
 			});
+            jQuery(window).on('resize', function() {
+                window.width = Math.ceil(canvas.width()/resolution);
+                window.height = Math.ceil(canvas.height()/resolution);
+                window.halfW = jQuery(document).width()/2;
+                window.halfH = jQuery(document).height()/2;
+
+                GOL.init("conway-canvas", window.width, window.height, 1, 1);
+                GOL.start();
+            });
 
 			// Hide and show the menubar when interacting with the game
 			window.dimmed = false
 			window.clickeddimmed = 0
 			var n = jQuery('#navbar')
-			var hideables = jQuery('#one, #two, #three, #four, #five, #six, #hs-logo, #bio')
+			var hideables = jQuery('#one, #two, #three, #four, #five, #six, .rc-scout, #bio')
 
 			jQuery('canvas').on('mousedown', function(e) {
 				window.clickeddimmed += 1
@@ -681,5 +692,5 @@
 		  })();
 		</script>
 		<noscript><p><img src="//nicksweeting.com/piwik/piwik.php?idsite=1" style="border:0;" alt=""/></p></noscript>
-	</body>
+    </body>
 </html>

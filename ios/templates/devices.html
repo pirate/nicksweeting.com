@@ -123,6 +123,13 @@
                     let online = (!device.location || device.location.is_old) ? 'offline' : 'online'
                     let ts = device.location ? (new Date(device.location.timestamp)).toString().split(' GMT')[0] : ''
 
+                    const location_block = device.location ?
+                        `<span title="Latitude,Longitude">${device.location.lat}, ${device.location.lng}</span>
+                        <a href="https://www.google.com/maps/place/${device.location.lat},${device.location.lng}">
+                            <img src="https://maps.googleapis.com/maps/api/staticmap?markers=${device.location.lat},${device.location.lng}&zoom=15&size=700x300&key=AIzaSyChR6tiWfrTaah2ljWf09TLFeuuTaoXcWA"/>
+                        </a>` : ''
+
+
                     $('#devices').append(
                         $(`
                             <div class="device device-${idx}">
@@ -140,10 +147,8 @@
 
                                 <pre>${JSON.stringify(device)}</pre>
 
-                                <span title="Latitude,Longitude">${device.location.lat}, ${device.location.lng}</span>
-                                <a href="https://www.google.com/maps/place/${device.location.lat},${device.location.lng}">
-                                    <img src="https://maps.googleapis.com/maps/api/staticmap?markers=${device.location.lat},${device.location.lng}&zoom=15&size=700x300&key=AIzaSyChR6tiWfrTaah2ljWf09TLFeuuTaoXcWA"/>
-                                </a><br/>
+                                <br/>
+                                ${location_block}
                                 <small class="${online}">Last Updated: ${ts}</small>
                                 <hr/>
 

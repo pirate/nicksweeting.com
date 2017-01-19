@@ -3,7 +3,7 @@ from pyicloud import PyiCloudService
 from flask import Flask, jsonify, request, abort, render_template
 
 
-api = PyiCloudService('nikisweeting@gmail.com')
+api = PyiCloudService('your-email@example.com')
 
 app = Flask(__name__)
 
@@ -14,7 +14,7 @@ def get_devices_list():
     try:
         return api.devices
     except Exception:
-        api = PyiCloudService('nikisweeting@gmail.com')
+        api = PyiCloudService('your-email@example.com')
         return api.devices
 
 

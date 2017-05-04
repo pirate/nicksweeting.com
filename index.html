@@ -686,9 +686,9 @@
 
 			if (mobile) {
 				jQuery('canvas').on('touchmove', function(e) {
-					e.preventDefault();
-					if (e.touches) {
-						GOL.bomb(e.touches[0].pageX, e.touches[0].pageY, 20);
+					var touches = e.originalEvent.touches;
+					if (touches) {
+						GOL.bomb(touches[0].pageX, touches[0].pageY, 20);
 					}
 				});
 			} else {

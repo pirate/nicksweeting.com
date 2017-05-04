@@ -274,6 +274,7 @@
 				#navbar {
 					height: 28px;
 					top: 12px;
+					overflow: hidden;
 				}
 				#navbar-title {
 					margin-left: 10px;
@@ -791,6 +792,7 @@
 					}, 15000);
 				} else {
 					jQuery('canvas').on('touchmove', function(e) {
+						e.preventDefault();
 						var touches = e.originalEvent.touches;
 						window.mX = touches[0].pageX;
 						window.mY = touches[0].pageY;

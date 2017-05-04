@@ -687,8 +687,10 @@
 			if (mobile) {
 				jQuery('canvas').on('touchmove', function(e) {
 					var touches = e.originalEvent.touches;
+					window.mX = touches[0].pageX;
+					window.mY = touches[0].pageY;
 					if (touches) {
-						GOL.bomb(touches[0].pageX, touches[0].pageY, 20);
+						breadcrumb(window.mX, window.mY, 20);
 					}
 				});
 			} else {

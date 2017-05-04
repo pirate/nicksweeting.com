@@ -45,10 +45,17 @@ this.GOL = (function (graphics, grid) {
 		graphics.draw(grid.getCells());
 	};
 
-	my.breadcrumb = function(x, y) {
+	my.breadcrumb = function(x, y, size) {
 		x = Number((x*grid.width).toFixed(0));
 		y = Number((y*grid.height).toFixed(0));
 		grid.enable(x,y);
+		if (size) {
+			for (var y=y-(size/2);y<y+(size/2);y++) {
+				for (var x=x-(size/2);x<x+(size/2);x++) {
+					grid.enable(x, y)
+				}
+			}
+		}
 	};
 
 	my.bomb = function(x,y, range) {

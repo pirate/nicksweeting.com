@@ -50,9 +50,9 @@ this.GOL = (function (graphics, grid) {
 		y = Number((y*grid.height).toFixed(0));
 		grid.enable(x,y);
 		if (size) {
-			for (var y=y-(size/2);y<y+(size/2);y++) {
-				for (var x=x-(size/2);x<x+(size/2);x++) {
-					grid.enable(x, y)
+			for (var y_offset=0;y_offset<size;y_offset++) {
+				for (var x_offset=0;x_offset<size;x_offset++) {
+					grid.enable(x + x_offset - (size/2), y + y_offset - size/2);
 				}
 			}
 		}

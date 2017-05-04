@@ -684,16 +684,7 @@
 				}
 			}
 
-			if (mobile) {
-				jQuery('canvas').on('touchmove', function(e) {
-					var touches = e.originalEvent.touches;
-					window.mX = touches[0].pageX;
-					window.mY = touches[0].pageY;
-					if (touches) {
-						GOL.breadcrumb(window.mX, window.mY, 20);
-					}
-				});
-			} else {
+			if (!mobile) {
 				jQuery('body').mousemove(function(e) {
 					mouseIsMoving(true);
 					mX = e.pageX-this.offsetLeft;
@@ -712,8 +703,8 @@
             jQuery(window).on('resize', function() {
                 window.width = Math.ceil(canvas.width()/resolution);
                 window.height = Math.ceil(canvas.height()/resolution);
-                window.halfW = jQuery(document).width()/2;
-                window.halfH = jQuery(document).height()/2;
+                window.halfW = jQuery(window).width()/2;
+                window.halfH = jQuery(window).height()/2;
 
                 GOL.init("conway-canvas", window.width, window.height, 1, 1);
                 GOL.start();
@@ -795,6 +786,16 @@
 							}, 26);
 						}
 					}, 15000);
+				} else {
+					jQuery('canvas').on('touchmove', function(e) {
+						var touches = e.originalEvent.touches;
+						window.mX = touches[0].pageX;
+						window.mY = touches[0].pageY;
+						if (touches) {
+							console.log((mX/canvas.width()), (mY/canvas.height()))
+							GOL.breadcrumb((mX/canvas.width()), (mY/canvas.height()), 20);
+						}
+					});
 				}
 
 				// Some console wisdom

@@ -724,7 +724,7 @@
 			var hideables = jQuery('#one, #two, #three, #four, #five, #six, .rc-scout, #bio')
 
 			if (!mobile) {
-				jQuery('canvas').on('mousedown', function(e) {
+				canvas.on('mousedown', function(e) {
 					window.clickeddimmed += 1
 					if (!window.dimmed) {
 						// hide menus
@@ -776,10 +776,30 @@
 
 				if (!mobile) {
 					setTimeout(function() {
-						if (!tried) typeHeader(' Click and drag to feed it', 5000);
-					}, 10000);
+						if (!tried) {
+							var ctx = canvas[0].getContext("2d", {alpha: false});
+							ctx.imageSmoothingEnabled= false;
+							ctx.font = "20px 'Andale Mono'";
 
-					// start growing automatically after 15sec if they haven't tried it yet themselves
+							var x = canvas.width()/6 - 40;
+							var y = canvas.height()/6 - 80;
+
+							// ctx.fillText("FEED ME", x, y);
+							setTimeout(() => {ctx.fillText("F", x, y);}, 1000);
+							setTimeout(() => {ctx.fillText("FE", x, y);}, 2000);
+							setTimeout(() => {ctx.fillText("FEE", x, y);}, 3000);
+							setTimeout(() => {ctx.fillText("FEED", x, y);}, 4000);
+							setTimeout(() => {ctx.fillText("FEED M", x, y);}, 5000);
+							setTimeout(() => {ctx.fillText("FEED ME", x, y);}, 6000);
+
+							setTimeout(() => {ctx.fillText("FEED ME.", x, y);}, 8000);
+							setTimeout(() => {ctx.fillText("FEED ME.", x, y);}, 9000);
+							setTimeout(() => {ctx.fillText("FEED ME..", x, y);}, 10000);
+							setTimeout(() => {ctx.fillText("FEED ME...", x, y);}, 11000);
+						}
+					}, 5000);
+
+					// start growing automatically after 20sec if they haven't tried it yet themselves
 					setTimeout(function() {
 						if (!tried) {
 							XW = jQuery(document).width();
@@ -792,9 +812,9 @@
 								}
 							}, 26);
 						}
-					}, 15000);
+					}, 25000);
 				} else {
-					jQuery('canvas').on('touchmove', function(e) {
+					canvas.on('touchmove', function(e) {
 						e.preventDefault();
 						var touches = e.originalEvent.touches;
 						window.mX = touches[0].pageX;

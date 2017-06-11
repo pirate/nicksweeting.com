@@ -505,10 +505,10 @@
 				<a class="navlink" href="http://stackoverflow.com/users/2156113/nick-sweeting">StackOverflow</a><br>
 				<a class="navlink" href="https://hackerone.com/thesquash">HackerOne</a><br>
 				<a class="navlink" href="https://www.linkedin.com/pub/nick-sweeting/b3/999/430">LinkedIn</a><br>
-				<a class="navlink" href="#currently-employed" style="text-decoration: line-through;" title="Currently Employed">Resume</a><br>
+				<a class="navlink" href="#currently-employed" style="text-decoration: line-through;" title="Currently Employed" onclick="alert('I\'m not currently looking for work.')">Resume</a><br>
 				<br>
 				<small class="navlink" style="color:red">Identity</small><br>
-				<a class="navlink" href="mailto:contact@sweeting.me">Contact Me</a><br>
+				<a class="navlink" href="#" onclick="recruiterCheck(event)">Contact Me</a><br>
 				<a class="navlink" href="https://keybase.io/nikisweeting">Keybase.io</a><br>
 				<a class="navlink" href="https://nicksweeting.com/d/nicksweeting.pgp.txt">PGP Public Key</a><br>
 			</div>
@@ -586,6 +586,32 @@
 		<script type="text/javascript" src="js/game-of-life.js"></script>
 		<script type="text/javascript" src="js/jquery.typer.js"></script>
 		<script type="text/javascript">
+			function recruiterCheck(event) {
+				event.preventDefault()
+				var result = confirm("Are you a recruiter?\nIf so, I'm not interested in jobs at the moment, please press cancel.\n\nOtherwise, press ok and watch the canvas carefully...")
+				if (result) {
+					var ctx = window.canvas[0].getContext("2d", {alpha: false});
+					ctx.imageSmoothingEnabled= false;
+					ctx.font = "20px 'Andale Mono'";
+
+					var x = 20;
+					var y = canvas.height()/6;
+
+					var email_username = "contact";
+					var email_domain = "sweeting.me";
+
+					ctx.fillText(email_username + "@", x, y);
+					setTimeout(() => {ctx.fillText(email_username + "@" + email_domain, x, y);}, 1000);
+					setTimeout(() => {
+						setInterval(() => {
+							ctx.imageSmoothingEnabled= false;
+							ctx.font = "20px 'Andale Mono'";
+							ctx.fillText(email_username + "@" + email_domain, x, y);
+						}, 500);
+					}, 1500);
+				}
+			}
+
 			function onClickSoundcloud(event) {
 				event.preventDefault()
 				var player = jQuery('#soundcloud');
@@ -661,7 +687,7 @@
 			// Game of Life Code
 			var mobile = jQuery(window).width() < 769;
 			var resolution = mobile ? 2 : 3;  // 1 is highest, 10 is lowest
-			var canvas = jQuery('#conway-canvas');
+			window.canvas = jQuery('#conway-canvas');
 			window.width = Math.ceil(jQuery(window).width()/resolution);
 			window.height = Math.ceil(jQuery(window).height()/resolution);
 

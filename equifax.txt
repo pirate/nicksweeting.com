@@ -1,0 +1,104 @@
+# Equifax Security Disaster 2017
+
+## Timeline:
+1. 2017-09-08 06:00:00: Equifax Leak Announcement
+2. 2017-09-08 16:00:00: Buy securityequifax2017.com domain and point it to github pages
+2. 2017-09-08 16:41:43: Start self-hosting securityequifax2017.com on digitalocean and turn off github pages
+3. 2017-09-08: Post it to FB, HN, and a few places on twitter
+4. Sept 09-20: Equifax mistakenly tweets 8 links to securityequifax2017.com
+5. Sept 20 9am: I am notified of tweets by @aaronkkruse via email
+6. Sept 20 10am: Make tweet, post to HN, @swiftonsecurity & @bcrypt retweet
+7. Sept 20 11am: Goes viral, 500k twitter hits, 100k+ cloudflare hits
+8. Sept 20 12pm: Cloudflare blocks me and suspends my account (later unsuspended after review)
+9. Sept 20 1pm: Turn off cloudflare DNS and point to Digitalocean + Letsencrypt
+10. Sept 20 2pm: Press starts contacting me
+11. Sept 20 4pm: Google blacklists the domain
+12. Sept 20 4:30pm: I destroy the digitalcoean droplet, and shut down the DNS to 127.0.0.1
+13. Sept 20-22nd: Media frenzy continues
+
+
+## Press:
+- https://twitter.com/thesquashSH/status/910512164938665984
+- https://twitter.com/SwiftOnSecurity/status/910532389641900038
+- https://twitter.com/SwiftOnSecurity/status/910529573439328258
+- https://twitter.com/bcrypt/status/910524247897817089
+- https://news.ycombinator.com/item?id=15295146
+- https://www.reddit.com/r/firstworldanarchists/comments/71cq0u/equifax_gets_it/
+- http://money.cnn.com/2017/09/20/technology/business/equifax-fake-site-twitter-phishing/index.html
+- https://www.cnet.com/news/equifax-twitter-fake-support-site-breach-victims/
+- https://gizmodo.com/equifax-has-been-sending-consumers-to-a-fake-phishing-s-1818588764
+- https://www.theverge.com/2017/9/20/16339612/equifax-tweet-wrong-website-phishing-identity-monitoring
+- http://fortune.com/2017/09/20/equifax-credit-breach-security-phishing/
+- https://www.forbes.com/sites/janetwburns/2017/09/21/equifax-was-linking-potential-breach-victims-on-twitter-to-a-scam-site/#2437e471288f
+- https://www.nytimes.com/2017/09/20/business/equifax-fake-website.html
+- https://arstechnica.com/information-technology/2017/09/equifax-directs-breach-victims-to-fake-notification-site/
+- http://uk.businessinsider.com/report-equifax-directed-concerned-consumers-to-a-spoof-site-2017-9
+- https://www.cbsnews.com/news/equifax-breach-company-sent-customers-to-wrong-site-for-weeks-report/
+- https://www.cnbc.com/video/2017/09/21/equifax-acknowledges-it-sent-customers-to-fake-phishing-site.html
+- https://www.dailydot.com/debug/equifax-fake-phishing-site/
+- http://www.slate.com/blogs/future_tense/2017/09/20/equifax_tweeted_the_wrong_url_for_its_data_breach_website.html
+- http://mashable.com/2017/09/20/equifax-twitter-phishing-site-facepalm/#cIiGURzHjOqF
+- http://nypost.com/2017/09/20/hackers-have-been-hiding-in-equifaxs-computer-network-for-months/
+- https://finance.yahoo.com/news/equifax-hack-2017-equifax-fake-162034727.html
+- http://wccftech.com/equifax-breach-victims-phishing-site/
+- http://thehill.com/policy/cybersecurity/351555-equifax-tweets-out-would-be-fishing-site-in-lieu-of-breach-info-site
+- http://www.refinery29.com/2017/09/173124/equifax-hack-twitter-phishing-site
+- https://www.avclub.com/equifax-accidentally-sent-hack-victims-to-a-phishing-si-1818602676
+- http://www.news5cleveland.com/newsy/equifax-fell-for-a-clone-of-its-website-and-then-sent-users-to-it
+- http://uproxx.com/news/equifax-sent-consumers-phishing-site/
+- https://mic.com/articles/184606/equifax-has-directed-followers-to-fake-phishing-site-for-nearly-two-weeks#.gVdhVCV34
+- https://www.slashgear.com/equifax-team-accidentally-sent-some-people-to-a-phishing-website-20500921/
+- https://www.eastidahonews.com/2017/09/equifax-tweets-fake-phishing-site-concerned-customers/
+- https://www.thepennyhoarder.com/smart-money/equifax-scam-site/
+- http://www.expressnews.com/business/technology/article/San-Antonio-consumers-angry-confused-over-12216111.php
+- http://tribunist.com/news/equifax-sent-consumers-to-fake-phishing-site-by-repeatedly-tweeting-the-wrong-url/
+- http://www.sfgate.com/business/article/Equifax-screws-up-further-Amazon-says-Oh-12215909.php
+- https://www.rawstory.com/2017/09/equifax-has-been-sending-customers-straight-into-a-hackers-trap-for-weeks/
+- http://www.ibtimes.com/equifax-phishing-scams-company-customer-service-sends-victim-fake-website-2592100
+- https://www.vanityfair.com/news/2017/09/donald-trump-un-africa
+- https://www.guruin.com/news/2879
+- http://vothemes.com/2017/09/after-equifax-breach-company-sent-victims-to-wrong-site-for/
+- https://www.rt.com/usa/404014-equifax-imposter-site-victims-two-weeks/
+- http://www.dailymail.co.uk/news/article-4904842/Equifax-sent-people-wrong-site-check-data-breach.html
+- https://www.usatoday.com/story/tech/talkingtech/2017/09/21/equifax-support-team-sent-victims-breach-phishing-site/688188001/
+- http://www.npr.org/sections/thetwo-way/2017/09/21/552681357/after-massive-data-breach-equifax-directed-customers-to-fake-site
+- http://wjla.com/features/7-on-your-side/7-on-your-side-equifax-accidentally-tweets-a-fake-phishing-site
+- http://dailycaller.com/2017/09/21/equifax-tried-to-help-customers-but-accidentally-sent-them-to-a-phony-site/
+- https://www.theregister.co.uk/2017/09/21/equifax_fooled_again_company_teets_out_links_to_website_parodying_it/
+- http://www.newser.com/story/248958/equifaxs-latest-headache-a-10-fake-website.html
+- https://www.deseretnews.com/article/865689297/Equifax-has-directed-victims-of-hack-to-a-fake-website-for-weeks.html
+- http://theweek.com/speedreads/725991/equifax-been-sending-customers-phishing-website
+- https://en.wikipedia.org/wiki/Equifax
+
+
+- John Oliver: https://www.youtube.com/watch?v=mPjgRKW_Jmk
+- Colbert Report: https://youtu.be/xh8d7TV74uQ?t=13m24s & https://www.youtube.com/watch?v=LyIEd5QVkyc&feature=youtu.be&t=251
+- Philip DeFranco: https://www.youtube.com/watch?v=OTDY--Qb72E&feature=youtu.be&t=415
+- Fox: https://youtu.be/tayONQBZmms?t=1m22s
+- CBS NY: https://www.youtube.com/watch?v=eHQUFznVh-k or https://www.youtube.com/watch?v=OR3MJH2cpaU
+- CBS Chicago: https://www.youtube.com/watch?v=MDWHKQ6Xa74
+- WCPO: https://www.youtube.com/watch?v=RL5svVyYF08
+- Newsy: https://www.youtube.com/watch?v=eHQUFznVh-k
+- US Breaking News: https://youtu.be/9Tx6xcYo1nQ?t=32s
+- Jim Yackel: https://www.youtube.com/watch?v=S2AdVUl69bc
+- Headlines with a voice: https://youtu.be/LrH1nGrApGs?t=4m20s
+- QuickNews: https://www.youtube.com/watch?v=MefmSvJwTf8
+
+## Official response
+1. Wednesday: "All posts using the wrong link have been taken down. To confirm, the correct website is https://www.equifaxsecurity2017.com. We apologize for the confusion."
+
+2. Thursday: “We apologize for the confusion. Consumers should be aware of fake websites purporting to be operated by Equifax. Our dedicated website for consumers to learn more about the incident and sign up for free credit monitoring is https://www.equifaxsecurity2017.com, and our company homepage is www.equifax.com. Please be cautious of visiting other websites claiming to be operated by Equifax that do not originate from these two pages.”
+
+## Summary
+
+It's in everyone's interest to get Equifax to change this site to a reputable domain.  I knew it would only cost me $15 to set up a site that would get people to notice, so I just did it. As it stands, their site is dangerously easy to impersonate, it only took me 20 minutes to build my clone.  I can guarantee there are real malicious phishing versions already out there. (there's also https://www.equifaxbreach2017.com/)
+
+The "wget" command on linux allows you to download a website, including all images, html, css, etc.  Using this command, it was very easy to just suck their whole site down and throw it on a $5 server.  It currently has the same type of SSL certificate as the real version, so from a trust perspective, there's no way for users to authenticate the real one vs my server.  They should either change it to https://equifax.com (with an EV cert), or take it down altogether.  I hope other companies are able to learn from this mistake, and remember to publish content only on trusted domains.
+
+I was honestly not that surprised when someone showed me the mistweet, it's just another mistake in a long line of horrendous security blunders they've made.  I was slightly more surprised when I learned that they tweeted the wrong link over 8 times, going all the way back to Sept 9th!  I just hope the employee who posted the tweet doesn't get fired, they probably just Google'd for the URL and ended up finding the fake one instead.  The real blame lies with the people who originally decided to set the site up badly.
+
+My fake site is not malicious in any way.  It loads over https and I've disabled the eligibility form so that no information typed in gets sent anywhere or saved in any way.  You can verify using the dev tools or by looking at the source code of eligibility/eligibility.html.  It recently got blocked by the google domains blacklist, so I took it down around 4pm CT on Wednesday.  There are screenshots in the NYTimes article and on twitter depicting what it looked like while it was up.
+
+The tweets got >700k impressions, and the site got >200k hits as of Wednesday afternoon before I turned off analytics.  I'm glad that all the responses so far are positive, I just hope it leads to Equifax actually fixing the situation.
+
+I'm Software Engineer/security enthusiast, currently working on launching a gaming+cryptocurrency startup in Medellin, Colombia: https://monadical.com

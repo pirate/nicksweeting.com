@@ -16,6 +16,7 @@
 12. Sept 20 4:30pm: I destroy the digitalcoean droplet, and shut down the DNS to 127.0.0.1
 13. Sept 20-22nd: Media frenzy continues
 
+14. 2019-10-03: It happens all over again with Mariott/Starwood Breach with + spoof site
 
 ## Press:
 - https://twitter.com/thesquashSH/status/910512164938665984
@@ -69,6 +70,11 @@
 - https://www.deseretnews.com/article/865689297/Equifax-has-directed-victims-of-hack-to-a-fake-website-for-weeks.html
 - http://theweek.com/speedreads/725991/equifax-been-sending-customers-phishing-website
 - https://en.wikipedia.org/wiki/Equifax
+
+Mariott / Starwood:
+- https://techcrunch.com/2018/12/03/marriott-data-breach-response-risk-phishing/
+- https://twitter.com/troyhunt/status/1068782889242845184
+- https://email-mariott.com
 
 
 - John Oliver: https://www.youtube.com/watch?v=mPjgRKW_Jmk

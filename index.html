@@ -657,11 +657,11 @@
 			});
 
 			// Show section name in header when hovered on
-			jQuery('#menub a.navlink').on('mouseenter', function(e) {
+			jQuery('a.navlink').on('mouseenter', function(e) {
 				var title = jQuery(e.target).attr('title') || jQuery(e.target).text();
-				typeHeader('writing' + '/ ' + title);
+				typeHeader(getSectionTitle(e) + ' / ' + title);
 			});
-			jQuery('#menub a.navlink').on('mouseleave', function() {
+			jQuery('a.navlink').on('mouseleave', function() {
 				resetHeader("");
 			});
 

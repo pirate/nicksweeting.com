@@ -588,26 +588,30 @@
 				event.preventDefault()
 				var result = confirm("Are you a recruiter?\nIf so, I'm not interested in jobs at the moment, please press cancel.\n\nOtherwise, press ok and watch the canvas carefully...")
 				if (result) {
-					var ctx = window.canvas[0].getContext("2d", {alpha: false});
-					ctx.imageSmoothingEnabled= false;
-					ctx.font = "20px 'Andale Mono'";
-
-					var x = 20;
-					var y = canvas.height()/6;
-
-					var email_username = "contact";
-					var email_domain = "sweeting.me";
-
-					ctx.fillText(email_username + "@", x, y);
-					setTimeout(() => {ctx.fillText(email_username + "@" + email_domain, x, y);}, 1000);
-					setTimeout(() => {
-						setInterval(() => {
-							ctx.imageSmoothingEnabled= false;
-							ctx.font = "20px 'Andale Mono'";
-							ctx.fillText(email_username + "@" + email_domain, x, y);
-						}, 500);
-					}, 1500);
+					drawEmailOnCanvas()
 				}
+			}
+
+			function drawEmailOnCanvas() {
+				var ctx = window.canvas[0].getContext("2d", {alpha: false});
+				ctx.imageSmoothingEnabled= false;
+				ctx.font = "20px 'Andale Mono'";
+
+				var x = 20;
+				var y = canvas.height()/6;
+
+				var email_username = "hello";
+				var email_domain = "sweeting.me";
+
+				ctx.fillText(email_username + "@", x, y);
+				setTimeout(function() {ctx.fillText(email_username + "@" + email_domain, x, y);}, 1000);
+				setTimeout(function() {
+					setInterval(function() {
+						ctx.imageSmoothingEnabled= false;
+						ctx.font = "20px 'Andale Mono'";
+						ctx.fillText(email_username + "@" + email_domain, x, y);
+					}, 500);
+				}, 1500);
 			}
 
 			function onClickSoundcloud(event) {
@@ -823,6 +827,9 @@
 
 			jQuery(window).load(function() {
 				typeHeader('Nick Sweeting');
+				if (document.location.hash == '#contact') {
+					drawEmailOnCanvas()
+				}
 
 				if (!mobile) {
 					setTimeout(function() {

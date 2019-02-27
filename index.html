@@ -593,17 +593,25 @@
 			}
 
 			function drawEmailOnCanvas() {
+				var ctx = window.canvas[0].getContext("2d", {alpha: false});
+				ctx.imageSmoothingEnabled= false;
+				ctx.font = "22px 'Andale Mono'";
+
 				var x = 20;
 				var y = canvas.height()/6;
 
 				var email_username = "hello";
 				var email_domain = "sweeting.me";
 
-				setInterval(function() {
-					ctx.imageSmoothingEnabled = false;
-					ctx.font = "22px 'Andale Mono'";
-					ctx.fillText(email_username + "@" + email_domain, x, y);
-				}, 400);
+				ctx.fillText(email_username + "@", x, y);
+				setTimeout(function() {ctx.fillText(email_username + "@" + email_domain, x, y);}, 1000);
+				setTimeout(function() {
+					setInterval(function() {
+						ctx.imageSmoothingEnabled= false;
+						ctx.font = "22px 'Andale Mono'";
+						ctx.fillText(email_username + "@" + email_domain, x, y);
+					}, 400);
+				}, 1500);
 			}
 
 			function onClickSoundcloud(event) {

@@ -532,8 +532,8 @@
 				<a class="navlink" href="https://stackoverflow.com/users/2156113/nick-sweeting" rel="me">StackOverflow</a><br>
 				<a class="navlink" href="https://cowpig.github.io/about/" rel="me">Cofounder's Site</a><br>
 				<br>
-				<small class="navlink" style="color:red">Identity</small><br>
-				<a class="navlink" href="#" onclick="recruiterCheck(event)" rel="me">Contact Me</a><br>
+				<small class="navlink" style="color:red">Contact Info</small><br>
+				<a class="navlink" href="#" onclick="recruiterCheck(event)" rel="me">Email Me</a><br>
 				<a class="navlink" href="https://keybase.io/nikisweeting" rel="me">Keybase.io</a><br>
 				<a class="navlink" href="https://github.com/pirate.keys" rel="me">SSH Public Key</a><br>
 				<a class="navlink" href="https://nicksweeting.com/d/nicksweeting.pgp.txt" rel="me">PGP Public Key</a><br>
@@ -593,25 +593,17 @@
 			}
 
 			function drawEmailOnCanvas() {
-				var ctx = window.canvas[0].getContext("2d", {alpha: false});
-				ctx.imageSmoothingEnabled= false;
-				ctx.font = "20px 'Andale Mono'";
-
 				var x = 20;
 				var y = canvas.height()/6;
 
 				var email_username = "hello";
 				var email_domain = "sweeting.me";
 
-				ctx.fillText(email_username + "@", x, y);
-				setTimeout(function() {ctx.fillText(email_username + "@" + email_domain, x, y);}, 1000);
-				setTimeout(function() {
-					setInterval(function() {
-						ctx.imageSmoothingEnabled= false;
-						ctx.font = "20px 'Andale Mono'";
-						ctx.fillText(email_username + "@" + email_domain, x, y);
-					}, 500);
-				}, 1500);
+				setInterval(function() {
+					ctx.imageSmoothingEnabled = false;
+					ctx.font = "22px 'Andale Mono'";
+					ctx.fillText(email_username + "@" + email_domain, x, y);
+				}, 400);
 			}
 
 			function onClickSoundcloud(event) {

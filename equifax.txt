@@ -1,5 +1,10 @@
 # Equifax Security Disaster 2017
 
+*********************************************************
+THIS IS A STALE ARCHIVE, FOR THE UP-TO-DATE VERSION, SEE:
+https://docs.sweeting.me/s/equifax-security-incident
+*********************************************************
+
 ## Timeline:
 1. 2017-09-08 06:00:00: Equifax Leak Announcement
 2. 2017-09-08 16:00:00: Buy securityequifax2017.com domain and point it to github pages

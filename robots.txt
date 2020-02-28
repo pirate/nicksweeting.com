@@ -1,16 +1,4 @@
 User-agent:*
-Disallow: /scan.html
-Disallow: /analytics/
-Disallow: /piwik/
-Disallow: /webmin/
-Disallow: /stats/
-Disallow: /artflak/
-Disallow: /hotspot/
-Disallow: /minecraft/
-Disallow: /xano/
-Disallow: /etherpad/
-Disallow: /vps/
-Disallow: /public/
 Disallow: /d/
 Disallow: /f/
-Disallow: /devices/
+Disallow: /.git

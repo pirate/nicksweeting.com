@@ -4,7 +4,7 @@ https://keybase.io/nikisweeting
 
 I hereby claim:
 
-  * I am an admin of https://nicksweeting.com
+  * I am an admin of https://sweeting.me
   * I am nikisweeting (https://keybase.io/nikisweeting) on keybase.
   * I have a public key ASAkuTPmwBtAZG-xmUmPOsqC7NN90ZmmCOXvUx1EcLtRKQo
 
@@ -20,7 +20,7 @@ To do so, I am signing this object:
             "username": "nikisweeting"
         },
         "service": {
-            "hostname": "nicksweeting.com",
+            "hostname": "sweeting.me",
             "protocol": "https:"
         },
         "type": "web_service_binding",
@@ -30,21 +30,21 @@ To do so, I am signing this object:
         "name": "keybase.io go client",
         "version": "1.0.16"
     },
-    "ctime": 1464826856,
+    "ctime": 1464826629,
     "expire_in": 504576000,
     "merkle_root": {
-        "ctime": 1464826799,
-        "hash": "14e989e7df0572d6dfd3bf7dee56384e4d8c109e04b4fbce8793ca1103e52433c5cd8d6299ba0b2eba0d4e6225f271ea8dfd4c482bb587511575f1dd22febf70",
-        "seqno": 475830
+        "ctime": 1464826342,
+        "hash": "d657f8a914fc21299b3813b84db474529ed6c9a3530b97b6407182d5c82cd6d663ea611fb2c1ada0e68167b7644cdd6e2b00258d7f30cdd6a0ba5b5072f97a7b",
+        "seqno": 475827
     },
-    "prev": "8509c071b65770e5f3a56c723518d4f2a4a8ab4b708115574e48fdf1790ce1ff",
-    "seqno": 24,
+    "prev": "d392968a013e72b321ec932d75f1a89cf40a2dbc9658c1192d475bd7b10b1459",
+    "seqno": 23,
     "tag": "signature"
 }
 
 which yields the signature:
 
-g6Rib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgJLkz5sAbQGRvsZlJjzrKguzTfdGZpgjl71MdRHC7USkKp3BheWxvYWTFAv17ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTIwMjRiOTMzZTZjMDFiNDA2NDZmYjE5OTQ5OGYzYWNhODJlY2QzN2RkMTk5YTYwOGU1ZWY1MzFkNDQ3MGJiNTEyOTBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwMjRiOTMzZTZjMDFiNDA2NDZmYjE5OTQ5OGYzYWNhODJlY2QzN2RkMTk5YTYwOGU1ZWY1MzFkNDQ3MGJiNTEyOTBhIiwidWlkIjoiZDc0YzdmOGMzNzE2NzRjMjFiODljZGQ0MWYzYjUyMDAiLCJ1c2VybmFtZSI6Im5pa2lzd2VldGluZyJ9LCJzZXJ2aWNlIjp7Imhvc3RuYW1lIjoibmlja3N3ZWV0aW5nLmNvbSIsInByb3RvY29sIjoiaHR0cHM6In0sInR5cGUiOiJ3ZWJfc2VydmljZV9iaW5kaW5nIiwidmVyc2lvbiI6MX0sImNsaWVudCI6eyJuYW1lIjoia2V5YmFzZS5pbyBnbyBjbGllbnQiLCJ2ZXJzaW9uIjoiMS4wLjE2In0sImN0aW1lIjoxNDY0ODI2ODU2LCJleHBpcmVfaW4iOjUwNDU3NjAwMCwibWVya2xlX3Jvb3QiOnsiY3RpbWUiOjE0NjQ4MjY3OTksImhhc2giOiIxNGU5ODllN2RmMDU3MmQ2ZGZkM2JmN2RlZTU2Mzg0ZTRkOGMxMDllMDRiNGZiY2U4NzkzY2ExMTAzZTUyNDMzYzVjZDhkNjI5OWJhMGIyZWJhMGQ0ZTYyMjVmMjcxZWE4ZGZkNGM0ODJiYjU4NzUxMTU3NWYxZGQyMmZlYmY3MCIsInNlcW5vIjo0NzU4MzB9LCJwcmV2IjoiODUwOWMwNzFiNjU3NzBlNWYzYTU2YzcyMzUxOGQ0ZjJhNGE4YWI0YjcwODExNTU3NGU0OGZkZjE3OTBjZTFmZiIsInNlcW5vIjoyNCwidGFnIjoic2lnbmF0dXJlIn2jc2lnxEBsBNsctnU7yAxRDRZcNKkjf0O+92693KpJ6ohReVq2dXe6Q/fe7WDlKqmn5Dk7dW5njtdDbF/qsT8evn/BuaQEqHNpZ190eXBlIKN0YWfNAgKndmVyc2lvbgE=
+g6Rib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgJLkz5sAbQGRvsZlJjzrKguzTfdGZpgjl71MdRHC7USkKp3BheWxvYWTFAvh7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTIwMjRiOTMzZTZjMDFiNDA2NDZmYjE5OTQ5OGYzYWNhODJlY2QzN2RkMTk5YTYwOGU1ZWY1MzFkNDQ3MGJiNTEyOTBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwMjRiOTMzZTZjMDFiNDA2NDZmYjE5OTQ5OGYzYWNhODJlY2QzN2RkMTk5YTYwOGU1ZWY1MzFkNDQ3MGJiNTEyOTBhIiwidWlkIjoiZDc0YzdmOGMzNzE2NzRjMjFiODljZGQ0MWYzYjUyMDAiLCJ1c2VybmFtZSI6Im5pa2lzd2VldGluZyJ9LCJzZXJ2aWNlIjp7Imhvc3RuYW1lIjoic3dlZXRpbmcubWUiLCJwcm90b2NvbCI6Imh0dHBzOiJ9LCJ0eXBlIjoid2ViX3NlcnZpY2VfYmluZGluZyIsInZlcnNpb24iOjF9LCJjbGllbnQiOnsibmFtZSI6ImtleWJhc2UuaW8gZ28gY2xpZW50IiwidmVyc2lvbiI6IjEuMC4xNiJ9LCJjdGltZSI6MTQ2NDgyNjYyOSwiZXhwaXJlX2luIjo1MDQ1NzYwMDAsIm1lcmtsZV9yb290Ijp7ImN0aW1lIjoxNDY0ODI2MzQyLCJoYXNoIjoiZDY1N2Y4YTkxNGZjMjEyOTliMzgxM2I4NGRiNDc0NTI5ZWQ2YzlhMzUzMGI5N2I2NDA3MTgyZDVjODJjZDZkNjYzZWE2MTFmYjJjMWFkYTBlNjgxNjdiNzY0NGNkZDZlMmIwMDI1OGQ3ZjMwY2RkNmEwYmE1YjUwNzJmOTdhN2IiLCJzZXFubyI6NDc1ODI3fSwicHJldiI6ImQzOTI5NjhhMDEzZTcyYjMyMWVjOTMyZDc1ZjFhODljZjQwYTJkYmM5NjU4YzExOTJkNDc1YmQ3YjEwYjE0NTkiLCJzZXFubyI6MjMsInRhZyI6InNpZ25hdHVyZSJ9o3NpZ8RATWjDd5v6sVTi73wnsjirdfvZuY2P69pDGmKz73WQoyfeTPTYY7ferxzn4ZnYBtpF/VmlsMqnZSYkLFMw/HrnAahzaWdfdHlwZSCjdGFnzQICp3ZlcnNpb24B
 
 And finally, I am proving ownership of this host by posting or
 appending to this document.

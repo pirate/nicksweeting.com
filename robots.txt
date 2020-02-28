@@ -1,4 +1,5 @@
 User-agent:*
+Disallow: /scan.html
 Disallow: /analytics/
 Disallow: /piwik/
 Disallow: /webmin/
@@ -11,4 +12,5 @@ Disallow: /etherpad/
 Disallow: /vps/
 Disallow: /public/
 Disallow: /d/
+Disallow: /f/
 Disallow: /devices/
